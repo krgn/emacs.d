@@ -11,6 +11,5 @@
 (require 'krgn-elpa)
 (require 'krgn-general)
 (require 'krgn-bindings)
-
-(require 'auto-complete)
-(auto-complete-mode t)
+(require 'krgn-ido-imenu)
+(require 'krgn-auto-complete)
