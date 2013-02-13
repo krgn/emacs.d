@@ -1,5 +1,7 @@
 (load-theme 'wombat)
 
+(set-default-font "Monospace-10")
+
 (custom-set-faces
  '(hl-line ((t (:background "grey12")))))
 
