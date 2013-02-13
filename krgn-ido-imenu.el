@@ -3,6 +3,9 @@
 (require 'imenu)
 
 (ido-mode t)
+(setq imenu-auto-rescan t)
+(setq imenu-max-item-length 100)
+(setq imenu-use-popup-menu nil)
 
 (defun mine-goto-symbol-at-point ()
   "Will navigate to the symbol at the current point of the cursor"
@@ -45,8 +48,5 @@
         (goto-char (overlay-start position)))
        (t
         (goto-char position))))))
-
-(global-set-key "\C-ci" 'ido-goto-symbol)
-(global-set-key "\C-cp" 'mine-goto-symbol-at-point)
 
 (provide 'krgn-ido-imenu)

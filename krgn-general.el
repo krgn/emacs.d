@@ -1,11 +1,20 @@
+;; always font-lock plz
 (global-font-lock-mode t)
+;; default tab-width
 (setq-default tab-width 2)
+;; always indent with spaces
 (setq-default indent-tabs-mode nil) 
+;; addicted to bling
 (blink-cursor-mode t)
+;; show matching parenthesis
 (show-paren-mode t)
+;; next to line number, show # column (character)
 (column-number-mode t)
+;; when ever a change to a file occurs, reflect it in the buffer
 (global-auto-revert-mode t)
+;; always highlight current line
 (global-hl-line-mode t)
+;; disable this for autopair to work as expected with brackets + quotes
 (delete-selection-mode -1)
 
 ;; utf8 all the way
@@ -35,5 +44,17 @@
         (save-buffers-kill-emacs))
     (message "Canceled exit")))
 
+
+
+(require 'wgrep)
+(require 'tramp)
+
+;; "80 columns" is too little :)
+(setq 'fill-column 120)
+
+;; grep mode!
+(setq 'grep-command "grep -nirH -e ")
+
+(setq 'browse-url-browser-function (quote browse-url-chromium))
 
 (provide 'krgn-general)
