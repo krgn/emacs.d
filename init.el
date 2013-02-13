@@ -19,6 +19,6 @@
 (require 'krgn-org)
 (require 'krgn-cua)
 (require 'krgn-rails)
-
+(require 'krgn-rhtml)
 (require 'krgn-general)
 (require 'krgn-bindings)

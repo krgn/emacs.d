@@ -50,11 +50,11 @@
 (require 'tramp)
 
 ;; "80 columns" is too little :)
-(setq 'fill-column 120)
+(setq fill-column 120)
 
 ;; grep mode!
-(setq 'grep-command "grep -nirH -e ")
+(setq grep-command "grep -nirH -e ")
 
-(setq 'browse-url-browser-function (quote browse-url-chromium))
+(setq browse-url-browser-function (quote browse-url-chromium))
 
 (provide 'krgn-general)
