@@ -1,4 +1,4 @@
-(load-theme 'wombat)
+(load-theme 'subatomic)
 
 (set-default-font "Monospace-10")
 
