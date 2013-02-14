@@ -1,9 +1,8 @@
-(load-theme 'subatomic)
-
+(load-theme 'tango)
 (set-default-font "Monospace-10")
 
 (custom-set-faces
- '(hl-line ((t (:background "grey12")))))
+ '(hl-line ((t (:background "grey90")))))
 
 ;; turn off clutter
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))

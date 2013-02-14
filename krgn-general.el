@@ -45,7 +45,7 @@
     (message "Canceled exit")))
 
 
-
+(require 'xclip)
 (require 'wgrep)
 (require 'tramp)
 

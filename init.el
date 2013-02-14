@@ -20,8 +20,10 @@
 (require 'krgn-cua)
 (require 'krgn-rails)
 (require 'krgn-rhtml)
+(require 'krgn-android)
 (require 'krgn-general)
 (require 'krgn-bindings)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
