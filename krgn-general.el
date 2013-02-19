@@ -56,7 +56,7 @@
 (setq grep-command "grep -nirH -e ")
 
 ;; don't break lines in an awkward way
-(setq truncate-lines t)
+(set-default 'truncate-lines t)
 
 (setq browse-url-browser-function (quote browse-url-chromium))
 
