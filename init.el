@@ -23,5 +23,6 @@
 (require 'krgn-android)
 (require 'krgn-js2)
 (require 'krgn-erc)
+(require 'krgn-scheme)
 (require 'krgn-general)
 (require 'krgn-bindings)
