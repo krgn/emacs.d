@@ -60,4 +60,7 @@
 
 (setq browse-url-browser-function (quote browse-url-firefox))
 
+;; autopair should always be on
+(autopair-global-mode t)
+
 (provide 'krgn-general)
