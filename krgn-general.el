@@ -58,6 +58,6 @@
 ;; don't break lines in an awkward way
 (set-default 'truncate-lines t)
 
-(setq browse-url-browser-function (quote browse-url-chromium))
+(setq browse-url-browser-function (quote browse-url-firefox))
 
 (provide 'krgn-general)
