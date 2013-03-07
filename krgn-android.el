@@ -1,6 +1,18 @@
 (require 'android-mode)
 (require 'javap-mode)
 
+;; <--- default keymap --->
+;; (defconst android-mode-keys
+;;   '(("d" . android-start-ddms)
+;;     ("e" . android-start-emulator)
+;;     ("l" . android-logcat)
+;;     ("C" . android-ant-clean)
+;;     ("c" . android-ant-debug)
+;;     ("i" . android-ant-installd)
+;;     ("r" . android-ant-reinstall)
+;;     ("u" . android-ant-uninstall)
+;;     ("a" . android-start-app)))
+
 (add-to-list 'file-name-handler-alist '("\\.class$" . javap-handler))
  
 (defun javap-handler (op &rest args)
@@ -28,5 +40,7 @@
                     inhibit-file-name-handlers)))
         (inhibit-file-name-operation operation))
     (apply operation args)))
+
+(setq android-mode-sdk-dir "/opt/android-sdk/")
 
 (provide 'krgn-android)
