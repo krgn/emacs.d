@@ -11,6 +11,8 @@
 
 ;;(setq ruby-deep-indent-paren nil)
 
+(add-hook 'ruby-mode-hook (highlight-todo))
+
 (add-to-list 'load-path "~/.emacs.d/site-lisp")
 (eval-after-load "ruby-mode" '(require 'ruby-mode-indent-fix))
 

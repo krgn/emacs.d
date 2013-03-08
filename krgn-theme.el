@@ -1,4 +1,4 @@
-(load-theme 'tango)
+(load-theme 'dichromacy)
 (set-default-font "Monospace-10")
 
 (custom-set-faces
