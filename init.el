@@ -31,3 +31,4 @@
 (require 'krgn-erc)
 (require 'krgn-scheme)
 (require 'krgn-bindings)
+(require 'krgn-wl)
