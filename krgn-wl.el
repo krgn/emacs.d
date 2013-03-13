@@ -16,27 +16,70 @@
 (autoload 'wl-draft "wl-draft" "Write draft with Wanderlust." t)
 
 (setq elmo-maildir-folder-path "~/mail")
+
 (setq wl-stay-folder-window t)
 (setq wl-folder-window-width 25)
-(setq wl-smtp-posting-server "localhost")
 
-(setq wl-local-domain "myhost.example.com")
-(setq wl-message-id-domain "myhost.example.com")
+(setq wl-user-mail-address-list 
+      (quote ("karsten@null2.net" "k.gebbert@gmail.com" "karsten.gebbert@gmail.com")))
 
-(setq wl-from "Me <me@example.com>")
+(setq wl-dispose-folder-alist
+      '(("^%.*null2\\.net" . ".null2.INBOX.Trash")
+        ("^%.*gmail\\.com" . ".karsten.gebbert.trash")))
 
-;; note: all below are dirs (Maildirs) under elmo-maildir-folder-path 
-;; the '.'-prefix is for marking them as maildirs
-(setq wl-fcc-force-as-read t)               ;; mark sent messages as read 
+;; select correct email address when we _start_ writing a draft.
+(add-hook 'wl-mail-setup-hook 'wl-draft-config-exec)
+;; don't apply the templates when sending the draft otherwise 
+;; choosing another template with C-c C-j won't have any effect
+(remove-hook 'wl-draft-send-hook 'wl-draft-config-exec)
 
-(setq wl-default-folder ".null2/INBOX")
-(setq wl-fcc ".null2/INBOX/Sent")                       ;; sent msgs go to the "sent"-folder
-(setq wl-draft-folder ".null2/INBOX/Drafts")          ;; store drafts in 'postponed'
-(setq wl-trash-folder ".null2/INBOX/Trash")           ;; put trash in 'trash'
-(setq wl-queue-folder ".null2/queue")             ;; we don't use this
+;;is run when wl-draft-send-and-exit or wl-draft-send is invoked:
+;;(NOTE: "M-: wl-draft-parent-folder" => %INBOX:myname/clear@imap.gmail.com:993)
+(setq wl-draft-config-alist
+      '(((string-match "null2" wl-draft-parent-folder)
+         (template . "work")
+         (wl-smtp-posting-user . "karsten@null2.net")
+         (wl-smtp-posting-server . "mail.null2.net")
+         (wl-local-domain . "nimble.null2.net")
+         (wl-draft-folder . ".null2.INBOX.Drafts")
+         ("Fcc" . ".null2.INBOX.Sent"))
+        ((string-match "gmail.com" wl-draft-parent-folder)
+         (template . "gmail")
+         (wl-smtp-posting-user . "k.gebbert")
+         (wl-smtp-posting-server . "smtp.gmail.com")
+         (wl-smtp-authenticate-type ."plain")
+         (wl-smtp-connection-type . 'starttls)
+         (wl-smtp-posting-port . 587)
+         (wl-local-domain . "gmail.com")
+         (wl-message-id-domain . "smtp.gmail.com"))))
 
-  ;; check this folder periodically, and update modeline
-;;(setq wl-biff-check-folder-list '(".todo"))
+;;choose template with C-c C-j
+(setq wl-template-alist
+      '(("gmail"
+         (wl-from . "karsten gebbert <karsten.gebbert@gmail.com>")
+         ("From" . wl-from))
+        ("work"
+         (wl-from . "Karsten Gebbert <k.gebbert@gmail.com>")
+         ("From" . wl-from))))
+
+;; ;; Use different signature files based on From: address
+;; (setq signature-file-alist
+;;       `((("From" . "myname@company.com") . ,(expand-file-name "~/.emacs.d/signature.d/myname@company.com"))
+;;         (("From" . "myname@gmail.com") . ,(expand-file-name "~/.emacs.d/signature.d/myname@gmail.com"))))
+
+;;Cycle through templates with arrow keys
+;; (define-key wl-template-mode-map (kbd "<right>") 'wl-template-next)
+;; (define-key wl-template-mode-map (kbd "<left>") 'wl-template-prev)
+
+;;default folder name auto completion:
+(setq wl-default-spec "%")
+
+;; mark sent messages (folder carbon copy) as read.
+(setq wl-fcc-force-as-read    t)
+
+;;Only save draft when I tell it to! (C-x C-s or C-c C-s):
+;;(arg: seconds of idle time untill auto-save).
+(setq wl-auto-save-drafts-interval nil)
 
 
 ;; hide many fields from message buffers
