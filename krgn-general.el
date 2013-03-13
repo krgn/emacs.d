@@ -67,5 +67,6 @@
                         (font-lock-add-keywords nil
                                                 '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t)))))
 
+(add-hook 'fundamental-mode-hook (highlight-todo))
 
 (provide 'krgn-general)
