@@ -1,3 +1,6 @@
+;; I don't suspend like that
+(global-set-key "\C-z" nil)
+
 ;; navigation
 (global-set-key "\M-{" nil)
 (global-set-key "\M-}" nil)
