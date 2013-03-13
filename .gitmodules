@@ -1,3 +1,7 @@
 [submodule "site-lisp/rhtml"]
 	path = site-lisp/rhtml
 	url = http://github.com/eschulte/rhtml.git
+[submodule "site-lisp/wanderlust"]
+	path = site-lisp/wanderlust
+	url = http://github.com/wanderlust/wanderlust.git
+	ignore = dirty
