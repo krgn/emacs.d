@@ -16,6 +16,10 @@
 (autoload 'wl-draft "wl-draft" "Write draft with Wanderlust." t)
 
 (setq elmo-maildir-folder-path "~/mail")
+(setq elmo-archive-folder-path "~/mail")
+(setq elmo-search-namazu-default-index-path "~/mail")
+(setq elmo-localdir-folder-path "~/mail")
+(setq elmo-localnews-folder-path "~/mail/news")
 
 (setq wl-stay-folder-window t)
 (setq wl-folder-window-width 25)

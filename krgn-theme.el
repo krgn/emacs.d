@@ -1,5 +1,8 @@
 (load-theme 'dichromacy)
+
+;; font
 (set-default-font "Monospace-10")
+(setq default-frame-alist '((font . "Monospace-10")))
 
 (custom-set-faces
  '(hl-line ((t (:background "grey90")))))
