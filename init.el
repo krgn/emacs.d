@@ -32,3 +32,4 @@
 (require 'krgn-scheme)
 (require 'krgn-bindings)
 (require 'krgn-wl)
+(provide 'krgn-keychain)
