@@ -1,11 +1,11 @@
-(load-theme 'dichromacy)
+(load-theme 'zenburn t)
 
 ;; font
 (set-default-font "Monospace-10")
 (setq default-frame-alist '((font . "Monospace-10")))
 
 (custom-set-faces
- '(hl-line ((t (:background "grey90")))))
+ '(hl-line ((t (:background "grey20")))))
 
 ;; turn off clutter
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))

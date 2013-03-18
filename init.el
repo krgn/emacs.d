@@ -12,7 +12,7 @@
                     (or (buffer-file-name) load-file-name)))
 (add-to-list 'load-path dotfiles-dir)
 
-(require 'krgn-theme)
+
 (require 'krgn-elpa)
 (require 'krgn-ido-imenu)
 (require 'krgn-auto-complete)
@@ -33,3 +33,4 @@
 (require 'krgn-bindings)
 (require 'krgn-wl)
 (provide 'krgn-keychain)
+(require 'krgn-theme)
