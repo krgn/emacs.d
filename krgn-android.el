@@ -43,4 +43,6 @@
 
 (setq android-mode-sdk-dir "/opt/android-sdk/")
 
+(add-hook 'android-mode-hook (highlight-todo))
+
 (provide 'krgn-android)

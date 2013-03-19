@@ -65,7 +65,7 @@
 
 (defun highlight-todo () (lambda ()
                         (font-lock-add-keywords nil
-                                                '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t)))))
+                                                '(("\\<\\(FIXME\\|NOTE\\|TODO\\|BUG\\):" 1 font-lock-warning-face t)))))
 
 (add-hook 'fundamental-mode-hook (highlight-todo))
 
