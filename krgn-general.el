@@ -69,7 +69,6 @@
 
 (add-hook 'fundamental-mode-hook (highlight-todo))
 
-
 (add-hook 'server-switch-hook
           (lambda ()
             (when (current-local-map)

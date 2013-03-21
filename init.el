@@ -34,3 +34,4 @@
 (require 'krgn-wl)
 (provide 'krgn-keychain)
 (require 'krgn-theme)
+(require 'krgn-md)
