@@ -69,6 +69,9 @@
 
 (add-hook 'fundamental-mode-hook (highlight-todo))
 
+;; compilation mode:
+;; jump to first error
+(setq compilation-auto-jump-to-first-error t)
 
 (add-hook 'server-switch-hook
           (lambda ()

@@ -1,7 +1,7 @@
 (require 'inf-ruby)
 (require 'ruby-mode)
 (require 'ruby-end)
-(require 'ruby-tools)
+;;(require 'ruby-tools)
 (require 'ruby-interpolation)
 
 ;; haml-mode
