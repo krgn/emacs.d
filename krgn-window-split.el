@@ -1,3 +1,13 @@
+(require 'window-number)
+
+(autoload 'window-number-mode "window-number" t)
+(autoload 'window-number-meta-mode "window-number" t)
+
+(window-number-mode 1)
+(window-number-meta-mode 1)
+
+(window-number-define-keys window-number-mode-map "C-x o ")
+
 ;; toggle horizontal/vertical arrangement of windows
 (defun toggle-window-split ()
   (interactive)
