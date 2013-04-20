@@ -5,3 +5,6 @@
 	path = site-lisp/wanderlust
 	url = http://github.com/wanderlust/wanderlust.git
 	ignore = dirty
+[submodule "site-lisp/html5-el"]
+	path = site-lisp/html5-el
+	url = https://github.com/hober/html5-el.git
