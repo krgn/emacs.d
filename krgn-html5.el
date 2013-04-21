@@ -4,6 +4,10 @@
 
 (require 'whattf-dt)
 
+;; html should trigger nxml-mode
+(add-to-list 'auto-mode-alist '("\\.html\\'" . nxml-mode))
+
+;; css indentation like js/c
 (setq css-indent-offset 2)
 
 (provide 'krgn-html5)
