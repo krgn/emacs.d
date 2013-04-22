@@ -71,6 +71,7 @@
 
 ;; compilation mode:
 ;; jump to first error
+
 (setq compilation-auto-jump-to-first-error t)
 
 (add-hook 'server-switch-hook
@@ -81,5 +82,10 @@
               (local-set-key (kbd "C-x C-c") 'server-edit))
             (when server-buffer-clients
               (local-set-key (kbd "C-x k") 'server-edit))))
+
+;; keep a list of projects and navigation
+(projectile-global-mode)
+;; recentf for cache
+(recentf-mode 1)
 
 (provide 'krgn-general)
