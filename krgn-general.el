@@ -63,9 +63,12 @@
 ;; autopair should always be on
 (autopair-global-mode t)
 
-(defun highlight-todo () (lambda ()
-                        (font-lock-add-keywords nil
-                                                '(("\\<\\(FIXME\\|NOTE\\|TODO\\|BUG\\):" 1 font-lock-warning-face t)))))
+(defun highlight-todo ()
+  (lambda ()
+    (font-lock-add-keywords nil
+                            '(("\\<\\(FIXME\\|NOTE\\|TODO\\|IDEA\\|BUG\\):"
+                               1 
+                               font-lock-warning-face t)))))
 
 (add-hook 'fundamental-mode-hook (highlight-todo))
 
