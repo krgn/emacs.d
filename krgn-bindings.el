@@ -31,5 +31,8 @@
 ;; ibuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
+;; toggle buffer layout
+(global-set-key (kbd "C-x t") 'toggle-window-split)
+
 (provide 'krgn-bindings)
 
