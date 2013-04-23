@@ -27,7 +27,7 @@
 (require 'krgn-rhtml)
 (require 'krgn-android)
 (require 'krgn-js)
-(require 'krgn-yas)
+(require 'krgn-yasnippet)
 (require 'krgn-erc)
 (require 'krgn-scheme)
 (require 'krgn-bindings)
