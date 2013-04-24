@@ -86,6 +86,9 @@
             (when server-buffer-clients
               (local-set-key (kbd "C-x k") 'server-edit))))
 
+;; set default directory
+(setq default-directory "~/")
+
 ;; keep a list of projects and navigation
 (projectile-global-mode)
 ;; recentf for cache
