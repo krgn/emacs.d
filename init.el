@@ -15,7 +15,7 @@
 (require 'krgn-elpa)
 (require 'krgn-ido-imenu)
 (require 'krgn-auto-complete)
-(require 'krgn-window-split)
+(require 'krgn-win)
 (require 'krgn-move-lines)
 (require 'krgn-yaml)
 (require 'krgn-compile)

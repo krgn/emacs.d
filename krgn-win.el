@@ -2,6 +2,26 @@
 
 (setq switch-window-increase 1)
 
+(setq split-height-threshold nil)
+(setq split-width-threshold 0)
+
+;; Rebalance windows after splitting right
+(defadvice split-window-right
+  (after rebalance-windows activate)
+  (balance-windows))
+(ad-activate 'split-window-right)
+
+;; Rebalance windows after splitting horizontally
+(defadvice split-window-horizontally
+  (after rebalance-windows activate)
+  (balance-windows))
+(ad-activate 'split-window-horizontally)
+
+(defadvice delete-window
+  (after rebalance-windows activate)
+  (balance-windows))
+(ad-activate 'delete-window)
+
 ;; toggle horizontal/vertical arrangement of windows
 (defun toggle-window-split ()
   (interactive)
@@ -28,4 +48,4 @@
           (select-window first-win)
           (if this-win-2nd (other-window 1))))))
 
-(provide 'krgn-window-split)
+(provide 'krgn-win)
