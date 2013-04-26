@@ -36,3 +36,4 @@
 (require 'krgn-theme)
 (require 'krgn-md)
 (require 'krgn-html5)
+(require 'krgn-eclim)
