@@ -8,3 +8,6 @@
 [submodule "site-lisp/html5-el"]
 	path = site-lisp/html5-el
 	url = https://github.com/hober/html5-el.git
+[submodule "site-lisp/auto-java-complete"]
+	path = site-lisp/auto-java-complete
+	url = git://github.com/emacs-java/auto-java-complete.git

@@ -8,6 +8,8 @@
 ;;             lisp expr), you'll get the exact variable name on the left and the
 ;;             value on the right (in the box)  [12:03]
 
+;; emacs -batch -f batch-byte-compile *.el
+
 (setq dotfiles-dir (file-name-directory
                     (or (buffer-file-name) load-file-name)))
 (add-to-list 'load-path dotfiles-dir)
@@ -36,4 +38,3 @@
 (require 'krgn-theme)
 (require 'krgn-md)
 (require 'krgn-html5)
-(require 'krgn-eclim)
