@@ -12,11 +12,6 @@
 ;; C-?,  f1 	ac-help 	Show buffer help       
 ;; C-s
 
-(add-to-list 'load-path "~/.emacs.d/site-lisp/auto-java-complete/")
-(require 'ajc-java-complete-config)
-(add-hook 'java-mode-hook 'ajc-java-complete-mode)
-(add-hook 'find-file-hook 'ajc-4-jsp-find-file-hook)
-
 (setq ac-use-menu-map t )
 (define-key ac-menu-map "\C-n" 'ac-next)
 (define-key ac-menu-map "\C-p" 'ac-previous)

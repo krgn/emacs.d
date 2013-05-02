@@ -25,8 +25,8 @@
 (global-set-key (kbd "C-c r") 'compile)
 
 ;; ido/menu stuff
-(global-set-key "\C-ci" 'ido-goto-symbol)
-(global-set-key "\C-cp" 'mine-goto-symbol-at-point)
+(global-set-key (kbd "C-c i") 'ido-goto-symbol)
+(global-set-key (kbd "C-c p") 'mine-goto-symbol-at-point)
 
 ;; ibuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
