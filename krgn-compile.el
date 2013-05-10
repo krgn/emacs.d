@@ -12,6 +12,8 @@
 
 ;; scroll output
 (setq compilation-scroll-output t)
+;; don't hang on warnings, only errors
+(setq compilation-skip-threshold 2)
 
 ;; colors for rspec output
 (add-to-list 'compilation-mode-font-lock-keywords
