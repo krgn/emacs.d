@@ -1,6 +1,8 @@
 ;; for coloring and such in compilation buffers
 (require 'ansi-color)
 (require 'compile)
+(require 'winner)
+(winner-mode t)
 
 (defun colorize-compilation-buffer ()
   (toggle-read-only)
@@ -24,5 +26,14 @@
                       compilation-info-face
                     compilation-error-face))
                (3 compilation-info-face t t)))
+
+(setq compilation-finish-functions 'compile-autoclose)
+(defun compile-autoclose (buffer string)
+  (cond ((string-match "finished" string)
+         (bury-buffer "*compilation*")
+         (winner-undo)
+         (message "Build successful."))
+        (t                                                                    
+         (message "Compilation exited abnormally: %s" string))))
 
 (provide 'krgn-compile)
