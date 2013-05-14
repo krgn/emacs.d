@@ -14,6 +14,7 @@
                     (or (buffer-file-name) load-file-name)))
 (add-to-list 'load-path dotfiles-dir)
 
+(require 'krgn-path)
 (require 'krgn-elpa)
 (require 'krgn-ido-imenu)
 (require 'krgn-auto-complete)

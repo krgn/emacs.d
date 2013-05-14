@@ -35,7 +35,7 @@
 (global-set-key (kbd "C-x t") 'toggle-window-split)
 
 ;; replace-regexp binding
-(global-set-key (kbd "C-x e") 'replace-regexp)
+(global-set-key (kbd "C-x w") 'replace-regexp)
 
 (provide 'krgn-bindings)
 
