@@ -54,8 +54,6 @@
 ;;; Code:
 
 (eval-when-compile (require 'cl))
-
-(provide 'ruby-mode-indent-fix)
 (require 'autopair)
 
 
@@ -195,6 +193,4 @@ Note that all params line up after the function.
 ;;            ad-do-it))))
 
 
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; ruby-mode-indent-fix.el ends here
+(provide 'ruby-mode-indent-fix)
