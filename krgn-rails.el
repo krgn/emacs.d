@@ -12,14 +12,13 @@
 (setq ruby-deep-indent-paren nil)
 (setq ruby-insert-encoding-magic-comment nil)
 
-(add-hook 'ruby-mode-hook (highlight-todo))
-
-(add-to-list 'load-path "~/.emacs.d/site-lisp")
-(eval-after-load "ruby-mode" '(require 'ruby-mode-indent-fix))
-
 (add-to-list 'auto-mode-alist '("\\.haml\\'" . haml-mode))
-(add-to-list 'auto-mode-alist '("\\.rb\\'" . ruby-mode)) 
-(autoload 'ruby-mode "ruby-mode" "Major mode for editing Ruby code" t)
+
+(setq enh-ruby-program "~/.rbenv/shims/ruby") ; so that still works if ruby points to ruby1.8
+(autoload 'enh-ruby-mode "enh-ruby-mode" "Major mode for ruby files" t)
+(add-hook 'enh-ruby-mode-hook (highlight-todo))
+(add-to-list 'auto-mode-alist '("\\.rb$" . enh-ruby-mode))
+(add-to-list 'interpreter-mode-alist '("ruby" . enh-ruby-mode))
 
 
 ;; (add-hook 'ruby-mode-hook

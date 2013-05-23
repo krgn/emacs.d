@@ -94,4 +94,9 @@
 ;; recentf for cache
 (recentf-mode 1)
 
+(require 'redo+)
+
+;; subword mode provides more fine grained movements through, e.g. camel-cased text
+(subword-mode t)
+
 (provide 'krgn-general)

@@ -1,11 +1,12 @@
 (require 'thingatpt)
 (require 'ido)
 (require 'imenu)
+(require 'cl)
 
 (ido-mode t)
 (setq imenu-auto-rescan t)
 (setq imenu-max-item-length 100)
-(setq imenu-use-popup-menu nil)
+(setq imenu-use-popup-menu t)
 
 (defun mine-goto-symbol-at-point ()
   "Will navigate to the symbol at the current point of the cursor"
@@ -18,13 +19,13 @@
   (imenu--make-index-alist)
   (let ((name-and-pos '())
         (symbol-names '()))
-    (flet ((addsymbols (symbol-list)
+    (flet ((add-symbols (symbol-list)
                        (when (listp symbol-list)
                          (dolist (symbol symbol-list)
                            (let ((name nil) (position nil))
                              (cond
                               ((and (listp symbol) (imenu--subalist-p symbol))
-                               (addsymbols symbol))
+                               (add-symbols symbol))
 
                               ((listp symbol)
                                (setq name (car symbol))
@@ -37,7 +38,7 @@
                              (unless (or (null position) (null name))
                                (add-to-list 'symbol-names name)
                                (add-to-list 'name-and-pos (cons name position))))))))
-      (addsymbols imenu--index-alist))
+      (add-symbols imenu--index-alist))
     (let* ((selected-symbol
             (if (null a-symbol)
                 (ido-completing-read "Symbol? " symbol-names)
