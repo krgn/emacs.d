@@ -37,5 +37,8 @@
 ;; replace-regexp binding
 (global-set-key (kbd "C-x w") 'replace-regexp)
 
+;; don't want this binding at all (lead to 'emacs release news')
+(global-set-key (kbd "C-h C-n") nil)
+
 (provide 'krgn-bindings)
 
