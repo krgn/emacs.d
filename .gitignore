@@ -12,3 +12,5 @@ abbrev_defs
 tutorial/*
 *.elc
 emms
+/projectile-bookmarks.eld
+/scheme-tags
