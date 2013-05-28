@@ -15,7 +15,7 @@
 (loop for ext in '("\\.swf$" "\\.elc$" "\\.pyc$" "\\.o$" ".#$")
       do (add-to-list 'helm-c-boring-file-regexp-list ext))
 
-(loop for name in '("\\*magit-process" "\\*magit-edit-log")
+(loop for name in '("\\*magit-process" "\\*magit-edit-log" "\\*Customize.*$")
       do (add-to-list 'helm-boring-buffer-regexp-list name))
 
 ;; for jumping around between sources
