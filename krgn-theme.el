@@ -1,7 +1,11 @@
+;; Zenburn theme and fixes for other modes
 (load-theme 'zenburn t)
-(custom-set-faces
- '(hl-line ((t (:background "grey20")))))
 
+(custom-set-faces
+ '(hl-line ((t (:background "grey20"))))
+ '(helm-ff-directory ((t :background "grey20"))))
+
+;; 
 ;; font
 (set-default-font "Monospace-10")
 (setq default-frame-alist '((font . "Monospace-10")))
