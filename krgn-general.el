@@ -97,6 +97,6 @@
 (require 'redo+)
 
 ;; subword mode provides more fine grained movements through, e.g. camel-cased text
-(subword-mode t)
+(global-subword-mode t)
 
 (provide 'krgn-general)
