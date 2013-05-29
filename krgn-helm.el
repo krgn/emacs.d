@@ -13,7 +13,7 @@
       do (add-to-list 'helm-buffers-favorite-modes mode))
 
 (loop for ext in '("\\.swf$" "\\.elc$" "\\.pyc$" "\\.o$" ".#$")
-      do (add-to-list 'helm-c-boring-file-regexp-list ext))
+      do (add-to-list 'helm-boring-file-regexp-list ext))
 
 (loop for name in '("\\*magit-process" "\\*magit-edit-log" "\\*Customize.*$")
       do (add-to-list 'helm-boring-buffer-regexp-list name))
@@ -24,6 +24,6 @@
 (global-set-key (kbd "M-t") 'helm-projectile)
 (global-set-key (kbd "C-x f") 'helm-for-files)
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
-(global-set-key (kbd "C-x C-f") 'helms-find-files)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
 
 (provide 'krgn-helm)
