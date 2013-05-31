@@ -14,3 +14,5 @@ tutorial/*
 emms
 /projectile-bookmarks.eld
 /scheme-tags
+/eshell/history
+/helm-adaptive-history
