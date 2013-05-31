@@ -40,3 +40,4 @@
 (require 'krgn-html5)
 (require 'krgn-ido-imenu)
 (require 'krgn-bindings)
+(require 'krgn-dired)
