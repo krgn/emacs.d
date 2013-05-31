@@ -41,3 +41,4 @@
 (require 'krgn-ido-imenu)
 (require 'krgn-bindings)
 (require 'krgn-dired)
+(require 'krgn-workgroups)
