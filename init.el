@@ -42,3 +42,4 @@
 (require 'krgn-bindings)
 (require 'krgn-dired)
 (require 'krgn-workgroups)
+(require 'krgn-shell)
