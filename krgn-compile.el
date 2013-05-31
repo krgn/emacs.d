@@ -29,12 +29,18 @@
                (3 compilation-info-face t t)))
 
 (defun compile-autoclose (buffer string)
-  (cond ((string-match "finished" string)
-         (bury-buffer "*compilation*")
-         (winner-undo)
-         (message "Build successful."))
-        (t                                                                    
-         (message "Compilation exited abnormally: %s" string))))
+  "Bury a compilation buffer if succeeded without warnings "
+  (if (and
+       (string-match "compilation" (buffer-name buffer))
+       (string-match "finished" string)
+       (not
+        (with-current-buffer buffer
+          (search-forward "warning" nil t))))
+      (run-with-timer 1 nil
+                      (lambda (buf)
+                        (delete-window (get-buffer-window buf)))
+                      buffer)))
+
 
 (setq compilation-finish-functions 'compile-autoclose)
 
