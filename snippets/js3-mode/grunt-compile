@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: grunt-compile
+# key: compile
+# --
+/* -*- compile-command: "${1:grunt}" -*- */
