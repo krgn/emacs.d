@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: item-resource
+# key: item
+# --
+<item>$1</item>
