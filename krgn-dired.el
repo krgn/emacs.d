@@ -1,3 +1,5 @@
+(put 'dired-find-alternate-file 'disabled nil)
+
 (setq dired-recursive-copies (quote always))
 (setq dired-recursive-deletes (quote top))
 
