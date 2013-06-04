@@ -8,6 +8,7 @@
 (setq helm-split-window-in-side-p nil)
 (setq helm-default-external-file-browser "pcmanfm")
 (setq helm-m-occur-idle-delay 0.1)
+(setq helm-ff-transformer-show-only-basename nil)
 
 (loop for mode in '(enh-ruby-mode js3-mode html-mode android-mode java-mode css-mode)
       do (add-to-list 'helm-buffers-favorite-modes mode))
