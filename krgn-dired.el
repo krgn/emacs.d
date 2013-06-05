@@ -3,6 +3,8 @@
 (setq dired-recursive-copies (quote always))
 (setq dired-recursive-deletes (quote top))
 
+(put 'dired-find-alternate-file 'disabled nil)
+
 (setq dired-dwim-target t)
 
 (add-hook 'dired-mode-hook
