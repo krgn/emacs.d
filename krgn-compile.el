@@ -1,9 +1,6 @@
 ;; for coloring and such in compilation buffers
 (require 'ansi-color)
 (require 'compile)
-(require 'winner)
-
-(winner-mode t)
 
 (defun colorize-compilation-buffer ()
   (toggle-read-only)
@@ -12,12 +9,11 @@
 
 ;; and add the hook
 (add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
-
 ;; scroll output
 (setq compilation-scroll-output t)
 ;; don't hang on warnings, only errors
 (setq compilation-skip-threshold 2)
-
+ 
 ;; colors for rspec output
 (add-to-list 'compilation-mode-font-lock-keywords
              '("^\\([[:digit:]]+\\) examples?, \\([[:digit:]]+\\) failures?\\(?:, \\([[:digit:]]+\\) pendings?\\)?$"
