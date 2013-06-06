@@ -99,4 +99,8 @@
 ;; subword mode provides more fine grained movements through, e.g. camel-cased text
 (global-subword-mode t)
 
+;; show disambiguated paths to files in reverse order 
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'reverse)
+
 (provide 'krgn-general)

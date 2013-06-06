@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: textview-node
+# key: textview
+# --
+<TextView android:id="@+id/$1"
+          android:layout_width="$2"
+          android:layout_height="$3"
+          android:layout_gravity="${4:left}"
+          android:textSize="${5:15sp}"
+          android:text="$6"
+          android:visibility="${7:gone}"
+          android:background="@color/$8"
+          android:textColor="@color/$9"/>
+$0
+
