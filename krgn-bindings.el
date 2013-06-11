@@ -1,6 +1,9 @@
 ;; I don't suspend like that
 (global-set-key "\C-z" nil)
 
+;; redo+
+(global-set-key (kbd "C-+") 'redo)
+
 ;; navigation
 (global-set-key "\M-{" nil)
 (global-set-key "\M-}" nil)
