@@ -22,7 +22,14 @@
 (add-to-list 'auto-mode-alist '("\\.rb$" . enh-ruby-mode))
 (add-to-list 'interpreter-mode-alist '("ruby" . enh-ruby-mode))
 
-
+(global-set-key (kbd "C-c h a") 'helm-rails-all)
+(global-set-key (kbd "C-c h c") 'helm-rails-controllers)
+(global-set-key (kbd "C-c h g c") 'helm-rails-grep-controllers)
+(global-set-key (kbd "C-c h m") 'helm-rails-models)
+(global-set-key (kbd "C-c h g m") 'helm-rails-grep-models)
+(global-set-key (kbd "C-c h v") 'helm-rails-views)
+(global-set-key (kbd "C-c h g v") 'helm-rails-grep-views)
+ 
 ;; (add-hook 'ruby-mode-hook
 ;;           (lambda ()
 ;;             (set (make-local-variable imenu-generic-expression)
