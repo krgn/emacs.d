@@ -14,8 +14,8 @@
    ((t (:underline nil :background "gold" :foreground "black")))))
 
 ;; font
-(set-default-font "Monospace-8")
-(setq default-frame-alist '((font . "Monospace-8")))
+(set-default-font "Monospace-10")
+(setq default-frame-alist '((font . "Monospace-10")))
 
 ;; linum mode
 (set-face-attribute 'linum nil :foreground "#666" )
