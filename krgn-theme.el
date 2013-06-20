@@ -19,6 +19,9 @@
 (set-default-font "Monospace-10")
 (setq default-frame-alist '((font . "Monospace-10")))
 
+;; linum mode
+(set-face-attribute 'linum nil :foreground "#666" )
+
 ;; turn off clutter
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
