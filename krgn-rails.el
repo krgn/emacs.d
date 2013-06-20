@@ -22,6 +22,8 @@
 (add-to-list 'auto-mode-alist '("\\.rb$" . enh-ruby-mode))
 (add-to-list 'interpreter-mode-alist '("ruby" . enh-ruby-mode))
 
+(setq end-ruby-deep-indent-paren nil)
+(setq end-ruby-deep-arglist t)
 (setq enh-ruby-hanging-brace-deep-indent-level 2)
 (setq enh-ruby-hanging-brace-indent-level 2)
 (setq enh-ruby-hanging-indent-level 2)
