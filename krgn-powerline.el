@@ -5,7 +5,7 @@
  '(powerline-active2 ((t (:foreground "#444" :background "GreenYellow" :box nil)))))
 
  ;; give your mode-line curves
-(setq powerline-arrow-shape 'arrow14)
+(setq powerline-arrow-shape 'arrow)
 (powerline-default-theme)
 
 

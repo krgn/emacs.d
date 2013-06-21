@@ -17,6 +17,12 @@
 (set-default-font "Monospace-10")
 (setq default-frame-alist '((font . "Monospace-10")))
 
+(set-face-attribute 'mode-line nil :box nil)
+(set-face-attribute 'mode-line-buffer-id nil :box nil)
+(set-face-attribute 'mode-line-emphasis nil :box nil)
+(set-face-attribute 'mode-line-highlight nil :box nil)
+(set-face-attribute 'mode-line-inactive nil :box nil)
+
 ;; linum mode
 (set-face-attribute 'linum nil :foreground "#666" )
 
