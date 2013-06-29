@@ -44,3 +44,5 @@
 (require 'krgn-workgroups)
 (require 'krgn-shell)
 (require 'krgn-powerline)
+(require 'krgn-aliases)
+(require 'krgn-smartparens)

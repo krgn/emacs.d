@@ -1,3 +1,11 @@
+(require 'uniquify)
+(require 'redo+)
+(require 'xclip)
+(require 'wgrep)
+(require 'tramp)
+(require 'saveplace)
+
+
 ;; always font-lock plz
 (global-font-lock-mode t)
 ;; default tab-width
@@ -24,15 +32,11 @@
 (set-keyboard-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
-;; less less less
-(defalias 'yes-or-no-p 'y-or-n-p)
-
 ;; location for all backup files
 (setq backup-directory-alist
       `(("." . ,(expand-file-name (concat dotfiles-dir "bak")))))
 
 ;; save last position in file
-(require 'saveplace)
 (setq-default save-place t)
 (setq save-place-file (expand-file-name ".places" user-emacs-directory))
 
@@ -46,11 +50,6 @@
         (save-buffers-kill-emacs))
     (message "Canceled exit")))
 
-
-(require 'xclip)
-(require 'wgrep)
-(require 'tramp)
-
 ;; "80 columns" is too little :)
 (setq fill-column 120)
 
@@ -62,9 +61,6 @@
 
 (setq browse-url-browser-function (quote browse-url-firefox))
 
-;; autopair should always be on
-(autopair-global-mode t)
-
 (defun highlight-todo ()
   (lambda ()
     (font-lock-add-keywords nil
@@ -73,11 +69,6 @@
                                font-lock-warning-face t)))))
 
 (add-hook 'fundamental-mode-hook (highlight-todo))
-
-;; compilation mode:
-;; jump to first error
-
-(setq compilation-auto-jump-to-first-error t)
 
 (add-hook 'server-switch-hook
           (lambda ()
@@ -96,13 +87,10 @@
 ;; recentf for cache
 (recentf-mode 1)
 
-(require 'redo+)
-
 ;; subword mode provides more fine grained movements through, e.g. camel-cased text
 (global-subword-mode t)
 
 ;; show disambiguated paths to files in reverse order 
-(require 'uniquify)
 (setq uniquify-buffer-name-style 'reverse)
 
 (provide 'krgn-general)

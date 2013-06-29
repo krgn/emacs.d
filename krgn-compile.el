@@ -7,6 +7,9 @@
   (ansi-color-apply-on-region (point-min) (point-max))
   (toggle-read-only))
 
+;; jump to first error
+(setq compilation-auto-jump-to-first-error t)
+
 ;; and add the hook
 (add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
 ;; scroll output
