@@ -17,7 +17,9 @@
 
 (custom-set-faces
  '(powerline-active1 ((t (:foreground "#fff" :background "RoyalBlue" :box nil))))
- '(powerline-active2 ((t (:foreground "#aaa" :background "Black" :box nil)))))
+ '(powerline-active2 ((t (:foreground "#ccc" :background "Gray39" :box nil))))
+ '(powerline-inactive1 ((t (:foreground "#444" :background "PowderBlue" :box nil))))
+ '(powerline-inactive2 ((t (:foreground "#aaa" :background "Gray39" :box nil)))))
 
  ;; give your mode-line curves
 (setq powerline-arrow-shape 'arrow)
@@ -31,7 +33,7 @@
 (set-face-attribute 'mode-line-buffer-id nil :background "White" :foreground "Black" :box nil)
 (set-face-attribute 'mode-line-emphasis nil :box nil)
 (set-face-attribute 'mode-line-highlight nil :box nil)
-(set-face-attribute 'mode-line-inactive nil :box nil)
+(set-face-attribute 'mode-line-inactive nil :background "White"  :foreground  "DimGrey" :box nil)
 
 ;; linum mode
 (set-face-attribute 'linum nil :foreground "#666" )
