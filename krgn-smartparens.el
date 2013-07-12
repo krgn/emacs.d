@@ -1,3 +1,4 @@
+(require 'smartparens)
 (require 'smartparens-config)
 
 ;; global mode 

@@ -1,7 +1,3 @@
-(require 'switch-window)
-
-(setq switch-window-increase 1)
-
 (setq split-height-threshold nil)
 (setq split-width-threshold 0)
 

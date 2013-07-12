@@ -1,4 +1,4 @@
-(helm-mode 1)
+(helm-mode 0)
 
 (setq helm-adaptative-mode t)
 (setq helm-adaptive-history-length 100)
@@ -24,8 +24,5 @@
 (define-key helm-map (kbd "<C-tab>") 'helm-next-source)
 
 (global-set-key (kbd "M-t") 'helm-projectile)
-(global-set-key (kbd "C-x f") 'helm-for-files)
-(global-set-key (kbd "C-x b") 'helm-buffers-list)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
 
 (provide 'krgn-helm)
