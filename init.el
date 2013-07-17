@@ -14,7 +14,8 @@
                     (or (buffer-file-name) load-file-name)))
 (add-to-list 'load-path dotfiles-dir)
 
-(require 'krgn-path)
+(load-file "~/.emacs.d/krgn-path.el")
+
 (require 'krgn-elpa)
 (require 'krgn-auto-complete)
 (require 'krgn-win)

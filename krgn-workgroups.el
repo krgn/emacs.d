@@ -7,7 +7,7 @@
       wg-use-faces nil
       wg-morph-on nil)
 
-(workgroups-mode 1)   
+(workgroups-everywhere)
 
 ;; <prefix> c    - create workgroup
 ;; <prefix> k    - kill workgroup

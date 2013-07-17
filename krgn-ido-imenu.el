@@ -10,6 +10,7 @@
 (setq imenu-auto-rescan t)
 (setq imenu-max-item-length 100)
 (setq imenu-use-popup-menu t)
+(setq ido-decorations '("\n    " "" "\n    " "\n    ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]"))
 
 (global-set-key
  "\M-x"
