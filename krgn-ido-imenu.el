@@ -5,22 +5,13 @@
 (require 'fuzzy-match)
 
 (ido-mode t)
-(setq ido-enable-flex-matching t)
+(ido-everywhere t)
 
+(setq ido-enable-flex-matching t)
 (setq imenu-auto-rescan t)
 (setq imenu-max-item-length 100)
 (setq imenu-use-popup-menu t)
 (setq ido-decorations '("\n    " "" "\n    " "\n    ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]"))
-
-(global-set-key
- "\M-x"
- (lambda ()
-   (interactive)
-   (call-interactively
-    (intern
-     (ido-completing-read
-      "M-x "
-      (all-completions "" obarray 'commandp))))))
 
 (defun ibuffer-ido-find-file ()
   "Like `ido-find-file', but default to the directory of the buffer at point."
@@ -78,5 +69,15 @@
         (goto-char (overlay-start position)))
        (t
         (goto-char position))))))
+
+(global-set-key
+ "\M-x"
+ (lambda ()
+   (interactive)
+   (call-interactively
+    (intern
+     (ido-completing-read
+      "M-x "
+      (all-completions "" obarray 'commandp))))))
 
 (provide 'krgn-ido-imenu)

@@ -2,8 +2,9 @@
 
 (setq scheme-program-name "csi -:c")
 (setq scheme-tags-location "~/.emacs.d/scheme-tags")
+(setq cicken-scheme-tags-file "~/.emacs.d/chicken-scheme-tags")
 
-(defun scheme-module-indent (state indent-point normal-indent) 0)
+(defun scheme-module-indent (state indent-point normal-indent) 2)
 (put 'module 'scheme-indent-function 'scheme-module-indent)
 (put 'handle-exceptions 'scheme-indent-function 1)
 (put 'make-request 'scheme-indent-function 1)

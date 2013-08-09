@@ -17,4 +17,10 @@
 (sp-with-modes sp--lisp-modes
   (sp-local-pair "(" nil :bind "C-("))
 
+(global-set-key (kbd "C-c C-c n") 'sp-select-next-thing)
+(global-set-key (kbd "C-c C-c p") 'sp-select-previous-thing)
+(global-set-key (kbd "C-c C-c k") 'sp-kill-sexp)
+(global-set-key (kbd "C-c C-c f") 'sp-forward-sexp)
+(global-set-key (kbd "C-c C-c b") 'sp-backward-sexp)
+
 (provide 'krgn-smartparens)

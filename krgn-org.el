@@ -1,7 +1,11 @@
 (require 'org)
+
 ;;(setq org-ditaa-jar-path "~/java/ditaa0_6b.jar") (setq org-plantuml-jar-path "~/share/plantuml/plantuml.jar")
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
 (add-hook 'org-mode-hook 'flyspell-mode)
+
+;; change the flyspell languange with:
+;; (ispell-change-dictionary lang)
 
 (setq org-clock-persist 'history)
 

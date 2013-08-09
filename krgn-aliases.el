@@ -1,5 +1,5 @@
+(defalias 'plp 'package-list-packages)
 
-;; less less less
 (defalias 'yes-or-no-p 'y-or-n-p)
 (defalias 'qrr 'query-replace-regexp)
 (defalias 'lml 'list-matching-lines)

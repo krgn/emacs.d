@@ -37,7 +37,6 @@
 (require 'krgn-clojure)
 (require 'krgn-wl)
 (require 'krgn-keychain)
-(require 'krgn-theme)
 (require 'krgn-md)
 (require 'krgn-html5)
 (require 'krgn-ido-imenu)
@@ -47,3 +46,4 @@
 (require 'krgn-shell)
 (require 'krgn-aliases)
 (require 'krgn-smartparens)
+(require 'krgn-theme)
