@@ -18,6 +18,12 @@
               "---------------------------------------------- -- -  -\n"))
 
 (setq mu4e-maildir "/home/k/mail")
+(setq mail-user-agent 'mu4e-user-agent)
+(setq mu4e-view-show-images t)
+(setq mu4e-view-image-max-width 800)
+(setq mu4e-attachment-dir "~/dwn")
+(setq mu4e-get-mail-command "offlineimap")
+(setq message-kill-buffer-on-exit t)
 
 ;; defaults to karsten.gebbert
 (setq mu4e-sent-folder "/karsten.gebbert/[Google Mail]/Sent Mail"
@@ -84,5 +90,3 @@
       (error "No email account found"))))
 
 (add-hook 'mu4e-compose-pre-hook 'my-mu4e-set-account)
-(setq mu4e-get-mail-command "offlineimap")
-(setq message-kill-buffer-on-exit t)

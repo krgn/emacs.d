@@ -35,7 +35,6 @@
 (require 'krgn-erc)
 (require 'krgn-scheme)
 (require 'krgn-clojure)
-(require 'krgn-wl)
 (require 'krgn-keychain)
 (require 'krgn-md)
 (require 'krgn-html5)

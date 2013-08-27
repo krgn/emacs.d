@@ -26,8 +26,8 @@
 (powerline-default-theme)
 
 ;; font
-(set-default-font "Menlo for Powerline-8")
-(setq default-frame-alist '((font . "Menlo for Powerline-8")))
+(set-default-font "Menlo for Powerline-9")
+(setq default-frame-alist '((font . "Menlo for Powerline-9")))
 
 (set-face-attribute 'mode-line nil :background "White" :foreground "Black" :box nil)
 (set-face-attribute 'mode-line-buffer-id nil :background "White" :foreground "Black" :box nil)
