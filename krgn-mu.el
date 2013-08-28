@@ -23,7 +23,7 @@
       mu4e-drafts-folder "/karsten.gebbert/[Google Mail]/Drafts"
       mu4e-trash-folder  "/karsten.gebbert/[Google Mail]/Trash"
       user-mail-address "karsten.gebbert@gmail.com"
-      message-signature gmail-signature)
+      message-signature 'gmail-signature)
 
 (defun my-mu4e-set-account ()
   "Set the account for composing a message."
@@ -49,14 +49,14 @@
      (mu4e-drafts-folder "/null2/INBOX/Drafts")
      (mu4e-trash-folder "/null2/INBOX/Trash")
      (user-mail-address "karsten@null2.net")
-     (message-signature null2-signature))
+     (message-signature 'null2-signature))
     ("karsten.gebbert"
      (mu4e-sent-folder "/karsten.gebbert/[Google Mail]/Sent Mail")
      (mu4e-drafts-folder "/karsten.gebbert/[Google Mail]/Drafts")
      (mu4e-trash-folder  "/karsten.gebbert/[Google Mail]/Trash")
      (user-full-name  "Karsten Gebbert")
      (user-mail-address "karsten.gebbert@gmail.com")
-     (message-signature gmail-signature))))
+     (message-signature 'gmail-signature))))
 
 (defun choose-msmtp-account ()
   (if (message-mail-p)
@@ -93,8 +93,10 @@
 (setq mu4e-get-mail-command "offlineimap")
 (setq message-send-mail-function 'message-send-mail-with-sendmail)
 (setq mu4e-headers-date-format "%d/%b/%Y %H:%M")
-(setq mu4e-html2text-command "html2text -utf8 -width 72")
+(setq mu4e-html2text-command "html2text -width 72")
 (setq sendmail-program "/usr/bin/msmtp")
+(setq mu4e-decryption-policy t)
+(setq mu4e-headers-skip-duplicates t)
 (setq message-kill-buffer-on-exit t)
 (setq mu4e-use-fancy-chars t)
 (setq user-full-name "Karsten Gebbert")
