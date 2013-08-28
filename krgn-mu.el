@@ -1,3 +1,4 @@
+(require 'gnus-dired)
 (require 'mu4e)
 
 (setq gmail-signature 
@@ -17,59 +18,12 @@
               "mail: karsten.gebbert@gmail.com\n"
               "---------------------------------------------- -- -  -\n"))
 
-(setq mu4e-maildir "/home/k/mail")
-(setq mail-user-agent 'mu4e-user-agent)
-(setq mu4e-view-show-images t)
-(setq mu4e-view-image-max-width 800)
-(setq mu4e-attachment-dir "~/dwn")
-(setq mu4e-get-mail-command "offlineimap")
-(setq message-kill-buffer-on-exit t)
-
 ;; defaults to karsten.gebbert
 (setq mu4e-sent-folder "/karsten.gebbert/[Google Mail]/Sent Mail"
       mu4e-drafts-folder "/karsten.gebbert/[Google Mail]/Drafts"
       mu4e-trash-folder  "/karsten.gebbert/[Google Mail]/Trash"
       user-mail-address "karsten.gebbert@gmail.com"
-      message-signature gmail-signature
-      mu4e-sent-messages-behavior 'delete
-      smtpmail-default-smtp-server "smtp.gmail.com"
-      smtpmail-local-domain "gmail.com"
-      smtpmail-smtp-server "smtp.gmail.com"
-      smtpmail-stream-type 'starttls
-      smtpmail-smtp-service 25)
-
-(defvar my-mu4e-account-alist
-  '(("null2"
-     (mu4e-sent-folder "/null2/INBOX/Sent")
-     (mu4e-drafts-folder "/null2/INBOX/Drafts")
-     (mu4e-trash-folder "/null2/INBOX/Trash")
-     (user-mail-address "karsten@null2.net")
-     (message-signature null2-signature)
-     (smtpmail-default-smtp-server "smtp.null2.net")
-     (smtpmail-local-domain "null2.net")
-     (smtpmail-smtp-server "smtp.null2.net")
-     (smtpmail-stream-type 'starttls)
-     (smtpmail-smtp-service 25))
-    ("karsten.gebbert"
-     (mu4e-sent-folder "/karsten.gebbert/[Google Mail]/Sent Mail")
-     (mu4e-drafts-folder "/karsten.gebbert/[Google Mail]/Drafts")
-     (mu4e-trash-folder  "/karsten.gebbert/[Google Mail]/Trash")
-     (user-full-name  "Karsten Gebbert")
-     (mu4e-sent-messages-behavior 'delete)
-     (user-mail-address "karsten.gebbert@gmail.com")
-     (message-signature gmail-signature)
-     (smtpmail-default-smtp-server "smtp.gmail.com")
-     (smtpmail-local-domain "gmail.com")
-     (smtpmail-smtp-server "smtp.gmail.com")
-     (smtpmail-stream-type 'starttls)
-     (smtpmail-smtp-service 25))))
-
-(setq mu4e-maildir-shortcuts
-      '(("/karsten.gebbert/INBOX"               . ?i)
-        ("/null2/INBOX"               . ?k)
-        ("/karsten.gebbert/[Google Mail]/Sent Mail"   . ?s)
-        ("/karsten.gebbert/[Google Mail]/Trash"       . ?t)
-        ("/karsten.gebbert/[Google Mail]/All Mail"    . ?a)))
+      message-signature gmail-signature)
 
 (defun my-mu4e-set-account ()
   "Set the account for composing a message."
@@ -89,4 +43,72 @@
               account-vars)
       (error "No email account found"))))
 
+(defvar my-mu4e-account-alist
+  '(("null2"
+     (mu4e-sent-folder "/null2/INBOX/Sent")
+     (mu4e-drafts-folder "/null2/INBOX/Drafts")
+     (mu4e-trash-folder "/null2/INBOX/Trash")
+     (user-mail-address "karsten@null2.net")
+     (message-signature null2-signature))
+    ("karsten.gebbert"
+     (mu4e-sent-folder "/karsten.gebbert/[Google Mail]/Sent Mail")
+     (mu4e-drafts-folder "/karsten.gebbert/[Google Mail]/Drafts")
+     (mu4e-trash-folder  "/karsten.gebbert/[Google Mail]/Trash")
+     (user-full-name  "Karsten Gebbert")
+     (user-mail-address "karsten.gebbert@gmail.com")
+     (message-signature gmail-signature))))
+
+(defun choose-msmtp-account ()
+  (if (message-mail-p)
+      (save-excursion
+        (let*
+            ((from (save-restriction
+                     (message-narrow-to-headers)
+                     (message-fetch-field "from")))
+             (account
+              (cond
+               ((string-match "karsten.gebbert@gmail.com" from) "karsten.gebbert")
+               ((string-match "karsten@null2.net" from) "null2"))))
+          (setq message-sendmail-extra-arguments (list '"-a" account))))))
+
+;; attach a file as an attachment to a new email message by entering C-c RET C-a
+(defun gnus-dired-mail-buffers ()
+  "Return a list of active message buffers."
+  (let (buffers)
+    (save-current-buffer
+      (dolist (buffer (buffer-list t))
+        (set-buffer buffer)
+        (when (and (derived-mode-p 'message-mode)
+                   (null message-sent-message-via))
+          (push (buffer-name buffer) buffers))))
+    (nreverse buffers)))
+
+(setq gnus-dired-mail-mode 'mu4e-user-agent)
+(setq message-sendmail-envelope-from 'header)
+(setq mu4e-maildir "/home/k/mail")
+(setq mail-user-agent 'mu4e-user-agent)
+(setq mu4e-view-show-images t)
+(setq mu4e-view-image-max-width 800)
+(setq mu4e-attachment-dir "~/dwn")
+(setq mu4e-get-mail-command "offlineimap")
+(setq message-send-mail-function 'message-send-mail-with-sendmail)
+(setq mu4e-headers-date-format "%d/%b/%Y %H:%M")
+(setq mu4e-html2text-command "html2text -utf8 -width 72")
+(setq sendmail-program "/usr/bin/msmtp")
+(setq message-kill-buffer-on-exit t)
+(setq mu4e-use-fancy-chars t)
+(setq user-full-name "Karsten Gebbert")
+(setq mu4e-sent-messages-behavior 'delete)
+
+(setq mu4e-maildir-shortcuts
+      '(("/karsten.gebbert/INBOX"               . ?i)
+        ("/null2/INBOX"               . ?k)
+        ("/karsten.gebbert/[Google Mail]/Sent Mail"   . ?s)
+        ("/karsten.gebbert/[Google Mail]/Trash"       . ?t)
+        ("/karsten.gebbert/[Google Mail]/All Mail"    . ?a)))
+
+(add-hook 'dired-mode-hook 'turn-on-gnus-dired-mode)
+(add-hook 'message-send-mail-hook 'choose-msmtp-account)
 (add-hook 'mu4e-compose-pre-hook 'my-mu4e-set-account)
+
+(provide 'krgn-mu)
