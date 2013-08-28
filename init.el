@@ -46,3 +46,4 @@
 (require 'krgn-aliases)
 (require 'krgn-smartparens)
 (require 'krgn-theme)
+(require 'krgn-mu)
