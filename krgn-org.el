@@ -8,7 +8,6 @@
 ;; (ispell-change-dictionary lang)
 
 (setq org-clock-persist 'history)
-
 (org-clock-persistence-insinuate)
 
 (setq org-directory "~/org")
@@ -31,11 +30,17 @@
               ("screen" . shell-script)
               ("ruby" . ruby)
               ("plantuml" . fundamental))))
+
 (setq org-babel-results-keyword "results")
 (setq org-src-preserve-indentation t)
 
-;; '(org-blank-before-new-entry (quote ((heading) (plain-list-item)))) ;; '(org-cycle-separator-lines 1) ;; '(org-empty-line-terminates-plain-lists t) 
-;; '(org-src-window-setup (quote current-window))
+;; less information is more
+(setq org-hide-leading-stars t)
+
+;; don't leave a space between new items. never, ever.
+(setq org-blank-before-new-entry '((heading . nil)
+                                   (plain-list-item . nil)))
+(setq org-pretty-entities t)
 
 (org-babel-do-load-languages
  (quote org-babel-load-languages)
