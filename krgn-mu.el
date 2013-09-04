@@ -101,6 +101,7 @@
 (setq mu4e-use-fancy-chars t)
 (setq user-full-name "Karsten Gebbert")
 (setq mu4e-sent-messages-behavior 'delete)
+(setq mu4e-update-interval 30)
 
 (setq mu4e-maildir-shortcuts
       '(("/karsten.gebbert/INBOX"               . ?i)

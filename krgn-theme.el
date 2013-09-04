@@ -1,5 +1,3 @@
-(require 'powerline)
-
 ;; Zenburn theme and fixes for other modes
 (load-theme 'zenburn t)
 
@@ -14,16 +12,6 @@
                 :foreground "#F0DFAF" :background "#2B2B2B"))))
  '(helm-selection 
    ((t (:underline nil :background "gold" :foreground "black")))))
-
-(custom-set-faces
- '(powerline-active1 ((t (:foreground "#fff" :background "RoyalBlue" :box nil))))
- '(powerline-active2 ((t (:foreground "#ccc" :background "Gray39" :box nil))))
- '(powerline-inactive1 ((t (:foreground "#444" :background "PowderBlue" :box nil))))
- '(powerline-inactive2 ((t (:foreground "#aaa" :background "Gray39" :box nil)))))
-
- ;; give your mode-line curves
-(setq powerline-arrow-shape 'arrow)
-(powerline-default-theme)
 
 ;; font
 (set-default-font "Ubuntu Mono-11")

@@ -7,6 +7,8 @@
 ;; change the flyspell languange with:
 ;; (ispell-change-dictionary lang)
 
+(setq-default major-mode 'org-mode)
+
 (setq org-clock-persist 'history)
 (org-clock-persistence-insinuate)
 
