@@ -83,7 +83,7 @@
 (setq default-directory "~/")
 (setq default-major-mode 'org-mode)     ;default is org-mode
 (setq initial-major-mode 'org-mode)     ;scratch buffer as well
-(setq initial-scratch-message "# *scratch* buffer for creating quick outlines")
+(setq initial-scratch-message "# *scratch* buffer for creating quick outlines\n")
 
 ;; keep a list of projects and navigation
 (projectile-global-mode)
