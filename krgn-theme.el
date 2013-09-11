@@ -14,8 +14,8 @@
    ((t (:underline nil :background "gold" :foreground "black")))))
 
 ;; font
-(set-default-font "Ubuntu Mono-11")
-(setq default-frame-alist '((font . "Ubuntu Mono-11")))
+(set-default-font "Terminus-11")
+(setq default-frame-alist '((font . "Terminus-11")))
 
 (set-face-attribute 'mode-line nil :background "White" :foreground "Black" :box nil)
 (set-face-attribute 'mode-line-buffer-id nil :background "White" :foreground "Black" :box nil)
