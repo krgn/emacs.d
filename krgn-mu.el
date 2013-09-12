@@ -1,29 +1,17 @@
 (require 'gnus-dired)
 (require 'mu4e)
 
-(setq gmail-signature 
-      (concat "---------------------------------------------- -- -  -\n"
-              "Karsten Gebbert\n"
-              "http://krgn.me\n"
-              "mob:  0049.176.6199.5110\n"
-              "mail: karsten.gebbert@gmail.com"
-              "---------------------------------------------- -- -  -\n"))
-
-(setq null2-signature 
-      (concat "---------------------------------------------- -- -  -\n"
-              "Karsten Gebbert\n"
-              "Null2 GmbH, Berlin\n"
-              "http://null2.net\n"
-              "mob:  0049.176.6199.5110\n"
-              "mail: karsten.gebbert@gmail.com\n"
-              "---------------------------------------------- -- -  -\n"))
-
 ;; defaults to karsten.gebbert
 (setq mu4e-sent-folder "/karsten.gebbert/[Google Mail]/Sent Mail"
       mu4e-drafts-folder "/karsten.gebbert/[Google Mail]/Drafts"
       mu4e-trash-folder  "/karsten.gebbert/[Google Mail]/Trash"
       user-mail-address "karsten.gebbert@gmail.com"
-      message-signature 'gmail-signature)
+      message-signature (concat "---------------------------------------------- -- -  -\n"
+                                "Karsten Gebbert\n"
+                                "http://krgn.me\n"
+                                "mob:  0049.176.6199.5110\n"
+                                "mail: karsten.gebbert@gmail.com"
+                                "---------------------------------------------- -- -  -\n"))
 
 (defun my-mu4e-set-account ()
   "Set the account for composing a message."
@@ -49,14 +37,25 @@
      (mu4e-drafts-folder "/null2/INBOX/Drafts")
      (mu4e-trash-folder "/null2/INBOX/Trash")
      (user-mail-address "karsten@null2.net")
-     (message-signature 'null2-signature))
+     (message-signature (concat "---------------------------------------------- -- -  -\n"
+                                "Karsten Gebbert\n"
+                                "Null2 GmbH, Berlin\n"
+                                "http://null2.net\n"
+                                "mob:  0049.176.6199.5110\n"
+                                "mail: karsten.gebbert@gmail.com\n"
+                                "---------------------------------------------- -- -  -\n")))
     ("karsten.gebbert"
      (mu4e-sent-folder "/karsten.gebbert/[Google Mail]/Sent Mail")
      (mu4e-drafts-folder "/karsten.gebbert/[Google Mail]/Drafts")
      (mu4e-trash-folder  "/karsten.gebbert/[Google Mail]/Trash")
      (user-full-name  "Karsten Gebbert")
      (user-mail-address "karsten.gebbert@gmail.com")
-     (message-signature 'gmail-signature))))
+     (message-signature (concat "---------------------------------------------- -- -  -\n"
+                                "Karsten Gebbert\n"
+                                "http://krgn.me\n"
+                                "mob:  0049.176.6199.5110\n"
+                                "mail: karsten.gebbert@gmail.com"
+                                "---------------------------------------------- -- -  -\n")))))
 
 (defun choose-msmtp-account ()
   (if (message-mail-p)

@@ -58,6 +58,7 @@
 
 ;; don't break lines in an awkward way
 (set-default 'truncate-lines t)
+(setq inhibit-startup-screen nil)       ;don't show the startup message
 
 (setq browse-url-browser-function (quote browse-url-firefox))
 
