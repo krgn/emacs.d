@@ -47,3 +47,4 @@
 (require 'krgn-smartparens)
 (require 'krgn-theme)
 (require 'krgn-mu)
+(require 'krgn-supercollider)
