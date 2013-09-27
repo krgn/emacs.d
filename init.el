@@ -19,7 +19,6 @@
 (require 'krgn-elpa)
 (require 'krgn-auto-complete)
 (require 'krgn-win)
-(require 'krgn-helm)
 (require 'krgn-move-lines)
 (require 'krgn-yaml)
 (require 'krgn-compile)

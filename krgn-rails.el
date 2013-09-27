@@ -4,8 +4,6 @@
 ;;(require 'ruby-tools)
 (require 'ruby-interpolation)
 
-(require 'helm-rails)
-
 ;; haml-mode
 (require 'haml-mode)
 (setq haml-backspace-backdents-nesting nil)

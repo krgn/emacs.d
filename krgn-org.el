@@ -42,7 +42,7 @@
 ;; don't leave a space between new items. never, ever.
 (setq org-blank-before-new-entry '((heading . nil)
                                    (plain-list-item . nil)))
-(setq org-pretty-entities t)
+(setq org-pretty-entities nil)
 
 (org-babel-do-load-languages
  (quote org-babel-load-languages)
