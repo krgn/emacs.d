@@ -15,6 +15,7 @@
 (add-to-list 'load-path dotfiles-dir)
 
 (load-file "~/.emacs.d/krgn-path.el")
+(load-file "~/.emacs.d/font.el")
 
 (require 'krgn-elpa)
 (require 'krgn-auto-complete)
