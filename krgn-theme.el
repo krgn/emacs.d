@@ -14,8 +14,8 @@
    ((t (:underline nil :background "gold" :foreground "black")))))
 
 ;; font
-(set-default-font "Terminus-11")
-(setq default-frame-alist '((font . "Terminus-11")))
+(set-default-font "Terminus-10")
+(setq default-frame-alist '((font . "Terminus-10")))
 
 (set-face-attribute 'mode-line nil :background "White" :foreground "Black" :box nil)
 (set-face-attribute 'mode-line-buffer-id nil :background "White" :foreground "Black" :box nil)
