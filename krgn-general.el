@@ -4,7 +4,7 @@
 (require 'wgrep)
 (require 'tramp)
 (require 'saveplace)
-
+(require 'ace-jump-mode)
 
 ;; always font-lock plz
 (global-font-lock-mode t)

@@ -43,5 +43,10 @@
 ;; don't want this binding at all (lead to 'emacs release news')
 (global-set-key (kbd "C-h C-n") nil)
 
+;; global ace jump thing
+(global-set-key (kbd "C-c f") 'ace-jump-mode)
+(global-set-key (kbd "C-x b") 'switch-to-buffer)
+(global-set-key (kbd "C-x C-b") 'ace-jump-buffer)
+
 (provide 'krgn-bindings)
 
