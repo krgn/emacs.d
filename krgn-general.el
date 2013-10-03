@@ -5,6 +5,7 @@
 (require 'tramp)
 (require 'saveplace)
 (require 'ace-jump-mode)
+(require 'evil-mode)
 
 ;; always font-lock plz
 (global-font-lock-mode t)

@@ -46,6 +46,7 @@
 ;; global ace jump thing
 (global-set-key (kbd "C-c f") 'ace-jump-mode)
 (global-set-key (kbd "C-x b") 'switch-to-buffer)
+(global-set-key (kbd "C-c w") 'ace-jump-word-mode)
 (global-set-key (kbd "C-x C-b") 'ace-jump-buffer)
 
 (provide 'krgn-bindings)
