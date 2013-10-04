@@ -28,7 +28,7 @@
        "l" 'mu4e-headers-mark-for-retag'
        "C" 'mu4e-compose-new
        "o" 'mu4e-view-message
-       "a" 'mu4e-headers-action
+       "a" 'mu4e-headers-action)
 
      (evil-add-hjkl-bindings mu4e-main-mode-map 'normal
        "J" 'mu4e~headers-jump-to-maildir
