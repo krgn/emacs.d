@@ -15,8 +15,8 @@
 ;; default tab-width
 (setq-default tab-width 2)
 ;; always indent with spaces
-(setq-default indent-tabs-mode nil) 
-(setq tab-stop-list (list 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52 54 56 58 60 62 64 66 68 70 72 74 76 78 80 82 84 86 88 90 92 94 96 98 100 102 104 106 108 110 112 114 116 118 120 122 124 126 128 130 132 134 136 138))
+(setq-default indent-tabs-mode nil)
+(setq tab-stop-list (number-sequence 2 60 2))
 
 ;; addicted to bling
 (blink-cursor-mode t)
@@ -70,7 +70,7 @@
   (lambda ()
     (font-lock-add-keywords nil
                             '(("\\<\\(FIXME\\|NOTE\\|TODO\\|IDEA\\|BUG\\):"
-                               1 
+                               1
                                font-lock-warning-face t)))))
 
 (add-hook 'fundamental-mode-hook (highlight-todo))
@@ -98,7 +98,13 @@
 ;; subword mode provides more fine grained movements through, e.g. camel-cased text
 (global-subword-mode t)
 
-;; show disambiguated paths to files in reverse order 
+;; show disambiguated paths to files in reverse order
 (setq uniquify-buffer-name-style 'reverse)
+
+;; inspired by M. Sveen 
+(defun cleanup-buffer ()
+  (interactive)
+  (whitespace-cleanup)
+  (indent-region 0 (buffer-end 1)))
 
 (provide 'krgn-general)
