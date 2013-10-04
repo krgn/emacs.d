@@ -5,7 +5,10 @@
 (require 'tramp)
 (require 'saveplace)
 (require 'ace-jump-mode)
-(require 'evil-mode)
+(require 'evil)
+
+(evil-mode 1)
+(setq evil-default-cursor t)
 
 ;; always font-lock plz
 (global-font-lock-mode t)
