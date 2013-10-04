@@ -1,7 +1,41 @@
 (require 'gnus-dired)
 (require 'mu4e)
 
-;; defaults to karsten.gebbert
+(eval-after-load 'mu4e
+  '(progn
+     ;; use the standard bindings as a base
+     (evil-make-overriding-map mu4e-view-mode-map 'normal t)
+     (evil-make-overriding-map mu4e-main-mode-map 'normal t)
+     (evil-make-overriding-map mu4e-headers-mode-map 'normal t)
+
+     (evil-add-hjkl-bindings mu4e-view-mode-map 'normal
+       "J" 'mu4e~headers-jump-to-maildir
+       "j" 'evil-next-line
+       "C" 'mu4e-compose-new
+       "o" 'mu4e-view-message
+       "Q" 'mu4e-raw-view-quit-buffer)
+
+     ;; (evil-add-hjkl-bindings mu4e-view-raw-mode-map 'normal
+     ;; "J" 'mu4e-jump-to-maildir
+     ;; "j" 'evil-next-line
+     ;; "C" 'mu4e-compose-new
+     ;; "q" 'mu4e-raw-view-quit-buffer)
+
+     (evil-add-hjkl-bindings mu4e-headers-mode-map 'normal
+       "j" 'mu4e-headers-next
+       "k" 'mu4e-headers-prev
+       "J" 'mu4e~headers-jump-to-maildir
+       "l" 'mu4e-headers-mark-for-retag'
+       "C" 'mu4e-compose-new
+       "o" 'mu4e-view-message
+       "a" 'mu4e-headers-action
+
+     (evil-add-hjkl-bindings mu4e-main-mode-map 'normal
+       "J" 'mu4e~headers-jump-to-maildir
+       "j" 'evil-next-line
+       "RET" 'mu4e-view-message)))
+
+                                        ; defaults to karsten.gebbert
 (setq mu4e-sent-folder "/karsten.gebbert/[Google Mail]/Sent Mail"
       mu4e-drafts-folder "/karsten.gebbert/[Google Mail]/Drafts"
       mu4e-trash-folder  "/karsten.gebbert/[Google Mail]/Trash"
