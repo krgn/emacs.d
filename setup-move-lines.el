@@ -16,4 +16,4 @@
       (transpose-lines -1))
     (move-to-column col)))
 
-(provide 'krgn-move-lines)
+(provide 'setup-move-lines)

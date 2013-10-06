@@ -22,4 +22,4 @@
 
 (setq yas/prompt-functions '(yas-popup-isearch-prompt yas/ido-prompt yas/completing-prompt))
 
-(provide 'krgn-yasnippet)
+(provide 'setup-yasnippet)

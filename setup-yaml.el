@@ -4,4 +4,4 @@
           '(lambda ()
              (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
 
-(provide 'krgn-yaml)
+(provide 'setup-yaml)

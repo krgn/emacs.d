@@ -10,4 +10,4 @@
 ;; css indentation like js/c
 (setq css-indent-offset 2)
 
-(provide 'krgn-html5)
+(provide 'setup-html5)

@@ -14,4 +14,4 @@
             (define-key dired-mode-map (kbd "^")
               (lambda () (interactive) (find-alternate-file "..")))))
 
-(provide 'krgn-dired)
+(provide 'setup-dired)

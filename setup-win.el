@@ -44,4 +44,4 @@
           (select-window first-win)
           (if this-win-2nd (other-window 1))))))
 
-(provide 'krgn-win)
+(provide 'setup-win)

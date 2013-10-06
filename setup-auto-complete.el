@@ -28,4 +28,4 @@
 
 (add-to-list 'ac-sources 'ac-source-dabbrev)
 
-(provide 'krgn-auto-complete)
+(provide 'setup-auto-complete)

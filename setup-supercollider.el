@@ -1,2 +1,2 @@
 (require 'sclang)
-(provide 'krgn-supercollider)
+(provide 'setup-supercollider)

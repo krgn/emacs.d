@@ -15,4 +15,4 @@
 ;; <prefix> C-s  - save session
 ;; <prefix> C-f  - load session
 
-(provide 'krgn-workgroups)
+(provide 'setup-workgroups)

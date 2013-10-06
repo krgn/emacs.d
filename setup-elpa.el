@@ -24,4 +24,4 @@
   (when (not (package-installed-p pkg))
     (package-install pkg)))
 
-(provide 'krgn-elpa)
+(provide 'setup-elpa)

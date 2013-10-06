@@ -5,4 +5,4 @@
 (setq erc-nick-uniquifier "$")
 (setq erc-autojoin-channels-alist '(("freenode.net" "#chicken" "#couchdb")))
 
-(provide 'krgn-erc)
+(provide 'setup-erc)

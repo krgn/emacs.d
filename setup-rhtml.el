@@ -4,4 +4,4 @@
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . rhtml-mode))
 (add-to-list 'auto-mode-alist '("\\.rhtml\\'" . rhtml-mode))
 
-(provide 'krgn-rhtml)
+(provide 'setup-rhtml)

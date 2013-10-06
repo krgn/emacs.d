@@ -45,4 +45,4 @@
 
 (add-hook 'android-mode-hook (highlight-todo))
 
-(provide 'krgn-android)
+(provide 'setup-android)

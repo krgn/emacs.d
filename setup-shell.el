@@ -4,4 +4,4 @@
 
 (add-hook 'comint-output-filter-functions 'comint-strip-ctrl-m)
 
-(provide 'krgn-shell)
+(provide 'setup-shell)

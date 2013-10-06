@@ -101,7 +101,7 @@
 ;; show disambiguated paths to files in reverse order
 (setq uniquify-buffer-name-style 'reverse)
 
-;; inspired by M. Sveen 
+;; inspired by M. Sveen
 (defun cleanup-buffer ()
   (interactive)
   (delete-trailing-whitespace)
@@ -127,4 +127,4 @@
   (projectile-kill-buffers))
 (ad-activate 'projectile-switch-project)
 
-(provide 'krgn-general)
+(provide 'setup-general)

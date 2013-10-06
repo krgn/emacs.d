@@ -17,6 +17,7 @@
 (load-file "~/.emacs.d/setup-path.el")
 (load-file "~/.emacs.d/setup-font.el")
 
+(require 'setup-aliases)
 (require 'setup-elpa)
 (require 'setup-auto-complete)
 (require 'setup-win)
@@ -43,7 +44,6 @@
 (require 'setup-dired)
 (require 'setup-workgroups)
 (require 'setup-shell)
-(require 'setup-aliases)
 (require 'setup-smartparens)
 (require 'setup-theme)
 (require 'setup-mu)

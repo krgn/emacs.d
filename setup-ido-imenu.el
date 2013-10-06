@@ -80,4 +80,4 @@
       "M-x "
       (all-completions "" obarray 'commandp))))))
 
-(provide 'krgn-ido-imenu)
+(provide 'setup-ido-imenu)

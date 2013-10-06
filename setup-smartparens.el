@@ -27,4 +27,4 @@
 (global-set-key (kbd "C-c C-c f") 'sp-forward-sexp)
 (global-set-key (kbd "C-c C-c b") 'sp-backward-sexp)
 
-(provide 'krgn-smartparens)
+(provide 'setup-smartparens)

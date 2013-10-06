@@ -15,4 +15,4 @@
 (put 'match 'scheme-indent-function 1)
 (put 'let-values 'scheme-indent-function 1)
 
-(provide 'krgn-scheme)
+(provide 'setup-scheme)

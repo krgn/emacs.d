@@ -10,4 +10,4 @@
 ;; highlight certain keywords like TODO/FIXME etc..
 (add-hook 'markdown-mode-hook '(lambda () (highlight-todo)))
 
-(provide 'krgn-md)
+(provide 'setup-md)

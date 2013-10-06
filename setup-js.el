@@ -9,4 +9,4 @@
 (define-key js3-mode-map (kbd "C-x n") 'next-multiframe-window)
 (define-key js3-mode-map (kbd "C-x p") 'previous-multiframe-window)
 
-(provide 'krgn-js)
+(provide 'setup-js)

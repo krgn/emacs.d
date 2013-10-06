@@ -2,4 +2,4 @@
 
 (keychain-refresh-environment)
 
-(provide 'krgn-keychain)
+(provide 'setup-keychain)

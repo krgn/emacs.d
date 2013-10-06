@@ -49,5 +49,5 @@
 (global-set-key (kbd "C-c w") 'ace-jump-word-mode)
 (global-set-key (kbd "C-x C-b") 'ace-jump-buffer)
 
-(provide 'krgn-bindings)
+(provide 'setup-bindings)
 

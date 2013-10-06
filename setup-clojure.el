@@ -3,4 +3,4 @@
 
 (setq clojure-defun-indents '(insert select update))
 
-(provide 'krgn-clojure)
+(provide 'setup-clojure)

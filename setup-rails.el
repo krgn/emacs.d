@@ -45,5 +45,5 @@
 
 ;; (add-hook 'ruby-mode-hook 'hs-minor-mode)
 
-(provide 'krgn-rails)
+(provide 'setup-rails)
 

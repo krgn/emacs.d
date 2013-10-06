@@ -58,4 +58,4 @@
 
 (setq org-confirm-babel-evaluate nil)
 
-(provide 'krgn-org)
+(provide 'setup-org)

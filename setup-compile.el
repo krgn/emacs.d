@@ -43,4 +43,4 @@
 
 (setq compilation-finish-functions 'compile-autoclose)
 
-(provide 'krgn-compile)
+(provide 'setup-compile)

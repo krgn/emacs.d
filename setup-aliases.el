@@ -44,4 +44,4 @@
 (defalias 'vlm 'visual-line-mode)
 (defalias 'glm 'global-linum-mode)
 
-(provide 'krgn-aliases)
+(provide 'setup-aliases)

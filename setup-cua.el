@@ -5,4 +5,4 @@
 ;; (setq cua-remap-control-v nil)
 ;; (setq cua-remap-control-z nil)
 
-(provide 'krgn-cua)
+(provide 'setup-cua)

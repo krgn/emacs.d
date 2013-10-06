@@ -144,4 +144,4 @@
 (add-hook 'message-send-mail-hook 'choose-msmtp-account)
 (add-hook 'mu4e-compose-pre-hook 'my-mu4e-set-account)
 
-(provide 'krgn-mu)
+(provide 'setup-mu)
