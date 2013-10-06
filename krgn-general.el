@@ -101,11 +101,26 @@
 ;; show disambiguated paths to files in reverse order
 (setq uniquify-buffer-name-style 'reverse)
 
-;; inspired by M. Sveen 
+;; inspired by M. Sveen
 (defun cleanup-buffer ()
   (interactive)
-  (whitespace-cleanup)
-  (indent-region 0 (buffer-end 1)))
+  (delete-trailing-whitespace)
+  (untabify (point-min) (point-max))
+  (indent-region (point-min) (point-max)))
+
+(defun create-scratch-buffer nil
+  "create a new scratch buffer to work in. (could be *scratch* - *scratchX*)"
+  (interactive)
+  (let ((n 0)
+        bufname)
+    (while (progn
+             (setq bufname (concat "*scratch"
+                                   (if (= n 0) "" (int-to-string n))
+                                   "*"))
+             (setq n (1+ n))
+             (get-buffer bufname)))
+    (switch-to-buffer (get-buffer-create bufname))
+    (emacs-lisp-mode)))
 
 ;; close all buffers 
 (defadvice projectile-switch-project (before kill-buffers activate)
