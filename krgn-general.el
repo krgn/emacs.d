@@ -107,4 +107,9 @@
   (whitespace-cleanup)
   (indent-region 0 (buffer-end 1)))
 
+;; close all buffers 
+(defadvice projectile-switch-project (before kill-buffers activate)
+  (projectile-kill-buffers))
+(ad-activate 'projectile-switch-project)
+
 (provide 'krgn-general)
