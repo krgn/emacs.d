@@ -127,4 +127,12 @@
   (projectile-kill-buffers))
 (ad-activate 'projectile-switch-project)
 
+;; open all files in current directory
+(defun open-all-files-in-dir ()
+  (interactive)
+  (dolist (file (directory-files default-directory))
+    (unless (or (equal file ".") 
+                (equal file ".."))
+      (find-file file))))
+
 (provide 'krgn-general)
