@@ -9,7 +9,6 @@
 ;;             value on the right (in the box)  [12:03]
 
 ;; emacs -batch -f batch-byte-compile *.el
-
 (setq dotfiles-dir (file-name-directory
                     (or (buffer-file-name) load-file-name)))
 (add-to-list 'load-path dotfiles-dir)
@@ -19,14 +18,15 @@
 
 (require 'setup-aliases)
 (require 'setup-elpa)
-(require 'setup-auto-complete)
-(require 'setup-win)
-(require 'setup-move-lines)
-(require 'setup-yaml)
-(require 'setup-compile)
-(require 'setup-magit)
-(require 'setup-org)
-(require 'setup-cua)
+(require 'use-package)
+
+(load-file "~/.emacs.d/setup-auto-complete.el")
+(load-file "~/.emacs.d/setup-win.el")
+(load-file "~/.emacs.d/setup-yaml.el")
+(load-file "~/.emacs.d/setup-compile.el")
+(load-file "~/.emacs.d/setup-magit.el")
+(load-file "~/.emacs.d/setup-org.el")
+
 (require 'setup-general)
 (require 'setup-rails)
 (require 'setup-rhtml)
