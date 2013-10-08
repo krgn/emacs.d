@@ -13,24 +13,26 @@
                     (or (buffer-file-name) load-file-name)))
 (add-to-list 'load-path dotfiles-dir)
 
-(load-file "~/.emacs.d/setup-path.el")
-(load-file "~/.emacs.d/setup-font.el")
 
-(require 'setup-aliases)
-(require 'setup-elpa)
+;; first, elpa needs to be set up for anything else to happen...
+(load-file "~/.emacs.d/setup-elpa.el")
+;; next, use-package is second most important library to load 
 (require 'use-package)
 
+(load-file "~/.emacs.d/setup-path.el")
+(load-file "~/.emacs.d/setup-font.el")
+(load-file "~/.emacs.d/setup-aliases.el")
+(load-file "~/.emacs.d/setup-utilities.el")
+(load-file "~/.emacs.d/setup-general.el")
+(load-file "~/.emacs.d/setup-evil.el")
 (load-file "~/.emacs.d/setup-auto-complete.el")
 (load-file "~/.emacs.d/setup-win.el")
 (load-file "~/.emacs.d/setup-yaml.el")
 (load-file "~/.emacs.d/setup-compile.el")
 (load-file "~/.emacs.d/setup-magit.el")
 (load-file "~/.emacs.d/setup-org.el")
-
-(require 'setup-general)
-(require 'setup-rails)
-(require 'setup-rhtml)
-(require 'setup-android)
+(load-file "~/.emacs.d/setup-ruby.el")
+(load-file "~/.emacs.d/setup-android.el")
 (require 'setup-js)
 (require 'setup-yasnippet)
 (require 'setup-erc)
@@ -38,7 +40,6 @@
 (require 'setup-clojure)
 (require 'setup-keychain)
 (require 'setup-md)
-(require 'setup-html5)
 (require 'setup-ido-imenu)
 (require 'setup-bindings)
 (require 'setup-dired)
