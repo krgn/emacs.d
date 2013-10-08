@@ -1,4 +1,4 @@
-(use-package ansi-term
+(use-package shell
   :init
   (progn
     (global-set-key (kbd "<f11>") 'ansi-term)
