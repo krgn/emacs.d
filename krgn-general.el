@@ -124,7 +124,11 @@
 
 ;; close all buffers 
 (defadvice projectile-switch-project (before kill-buffers activate)
-  (projectile-kill-buffers))
+  (let ((root (condition-case nil 
+                 (projectile-project-root)
+               (error nil))))
+    (if root
+        (projectile-kill-buffers))))
 (ad-activate 'projectile-switch-project)
 
 ;; open all files in current directory
