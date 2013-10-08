@@ -1,50 +1,43 @@
-;; init.el
-;; ------------------------
-;; in large parts copied from all over the place,
-;; but in particular from http://github/bodil/emacs.d :)
+;; set up elpa
+(setq relative-config-dir "~/.emacs.d/")
+(load-file "~/.emacs.d/elpa.el")
 
-;; FIND VAR NAMES:
-;; <YoungFrog> krgn: if you hit RET (or clic) on "State" and use ":" (show saved
-;;             lisp expr), you'll get the exact variable name on the left and the
-;;             value on the right (in the box)  [12:03]
+;; use use-package :)
+(require 'use-package)
+;; massage list of file-names
+(setq dot-files 
+      (map 'list (lambda (item) (concat relative-config-dir item))
+           (list "setup-path.el"
+                 "setup-font.el"
+                 "setup-aliases.el"
+                 "setup-utilities.el"
+                 "setup-general.el"
+                 "setup-evil.el"
+                 "setup-auto-complete.el"
+                 "setup-win.el"
+                 "setup-yaml.el"
+                 "setup-compile.el"
+                 "setup-magit.el"
+                 "setup-org.el"
+                 "setup-ruby.el"
+                 "setup-android.el"
+                 "setup-smartparens.el"
+                 "setup-projectile.el"
+                 "setup-js.el"
+                 "setup-yasnippet.el"
+                 "setup-erc.el"
+                 "setup-scheme.el"
+                 "setup-clojure.el"
+                 "setup-keychain.el"
+                 "setup-md.el"
+                 "setup-ido-imenu.el"
+                 "setup-bindings.el"
+                 "setup-ace-jump.el"
+                 "setup-dired.el"
+                 "setup-workgroups.el"
+                 "setup-shell.el"
+                 "setup-theme.el"
+                 "setup-mu.el"
+                 "setup-supercollider.el")))
 
-;; emacs -batch -f batch-byte-compile *.el
-
-(setq dotfiles-dir (file-name-directory
-                    (or (buffer-file-name) load-file-name)))
-(add-to-list 'load-path dotfiles-dir)
-
-(load-file "~/.emacs.d/krgn-path.el")
-(load-file "~/.emacs.d/font.el")
-
-(require 'krgn-elpa)
-(require 'krgn-auto-complete)
-(require 'krgn-win)
-(require 'krgn-move-lines)
-(require 'krgn-yaml)
-(require 'krgn-compile)
-(require 'krgn-magit)
-(require 'krgn-org)
-(require 'krgn-cua)
-(require 'krgn-general)
-(require 'krgn-rails)
-(require 'krgn-rhtml)
-(require 'krgn-android)
-(require 'krgn-js)
-(require 'krgn-yasnippet)
-(require 'krgn-erc)
-(require 'krgn-scheme)
-(require 'krgn-clojure)
-(require 'krgn-keychain)
-(require 'krgn-md)
-(require 'krgn-html5)
-(require 'krgn-ido-imenu)
-(require 'krgn-bindings)
-(require 'krgn-dired)
-(require 'krgn-workgroups)
-(require 'krgn-shell)
-(require 'krgn-aliases)
-(require 'krgn-smartparens)
-(require 'krgn-theme)
-(require 'krgn-mu)
-(require 'krgn-supercollider)
+(dolist (file dot-files) (load-file file))
