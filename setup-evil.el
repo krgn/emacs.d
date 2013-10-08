@@ -15,7 +15,4 @@
                                      ((buffer-modified-p)   '("#006fa0" . "#ffffff"))
                                      (t default-color))))
                     (set-face-background 'mode-line (car color))
-                    (set-face-foreground 'mode-line (cdr color))))))
-
-    
-    ))
+                    (set-face-foreground 'mode-line (cdr color))))))))

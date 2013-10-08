@@ -1,51 +1,43 @@
-;; init.el
-;; ------------------------
-;; in large parts copied from all over the place,
-;; but in particular from http://github/bodil/emacs.d :)
+;; set up elpa
+(setq relative-config-dir "~/.emacs.d/")
+(load-file "~/.emacs.d/elpa.el")
 
-;; FIND VAR NAMES:
-;; <YoungFrog> krgn: if you hit RET (or clic) on "State" and use ":" (show saved
-;;             lisp expr), you'll get the exact variable name on the left and the
-;;             value on the right (in the box)  [12:03]
-
-;; emacs -batch -f batch-byte-compile *.el
-(setq dotfiles-dir (file-name-directory
-                    (or (buffer-file-name) load-file-name)))
-(add-to-list 'load-path dotfiles-dir)
-
-
-;; first, elpa needs to be set up for anything else to happen...
-(load-file "~/.emacs.d/setup-elpa.el")
-;; next, use-package is second most important library to load 
+;; use use-package :)
 (require 'use-package)
+;; massage list of file-names
+(setq dot-files 
+      (map 'list (lambda (item) (concat relative-config-dir item))
+           (list "setup-path.el"
+                 "setup-font.el"
+                 "setup-aliases.el"
+                 "setup-utilities.el"
+                 "setup-general.el"
+                 "setup-evil.el"
+                 "setup-auto-complete.el"
+                 "setup-win.el"
+                 "setup-yaml.el"
+                 "setup-compile.el"
+                 "setup-magit.el"
+                 "setup-org.el"
+                 "setup-ruby.el"
+                 "setup-android.el"
+                 "setup-smartparens.el"
+                 "setup-projectile.el"
+                 "setup-js.el"
+                 "setup-yasnippet.el"
+                 "setup-erc.el"
+                 "setup-scheme.el"
+                 "setup-clojure.el"
+                 "setup-keychain.el"
+                 "setup-md.el"
+                 "setup-ido-imenu.el"
+                 "setup-bindings.el"
+                 "setup-ace-jump.el"
+                 "setup-dired.el"
+                 "setup-workgroups.el"
+                 "setup-shell.el"
+                 "setup-theme.el"
+                 "setup-mu.el"
+                 "setup-supercollider.el")))
 
-(load-file "~/.emacs.d/setup-path.el")
-(load-file "~/.emacs.d/setup-font.el")
-(load-file "~/.emacs.d/setup-aliases.el")
-(load-file "~/.emacs.d/setup-utilities.el")
-(load-file "~/.emacs.d/setup-general.el")
-(load-file "~/.emacs.d/setup-evil.el")
-(load-file "~/.emacs.d/setup-auto-complete.el")
-(load-file "~/.emacs.d/setup-win.el")
-(load-file "~/.emacs.d/setup-yaml.el")
-(load-file "~/.emacs.d/setup-compile.el")
-(load-file "~/.emacs.d/setup-magit.el")
-(load-file "~/.emacs.d/setup-org.el")
-(load-file "~/.emacs.d/setup-ruby.el")
-(load-file "~/.emacs.d/setup-android.el")
-(require 'setup-js)
-(require 'setup-yasnippet)
-(require 'setup-erc)
-(require 'setup-scheme)
-(require 'setup-clojure)
-(require 'setup-keychain)
-(require 'setup-md)
-(require 'setup-ido-imenu)
-(require 'setup-bindings)
-(require 'setup-dired)
-(require 'setup-workgroups)
-(require 'setup-shell)
-(require 'setup-smartparens)
-(require 'setup-theme)
-(require 'setup-mu)
-(require 'setup-supercollider)
+(dolist (file dot-files) (load-file file))

@@ -1,5 +1,3 @@
-(require 'keychain-environment)
-
-(keychain-refresh-environment)
-
-(provide 'setup-keychain)
+(use-package keychain-environment
+  :init
+  (keychain-refresh-environment))

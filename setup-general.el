@@ -4,7 +4,6 @@
 (require 'wgrep)
 (require 'tramp)
 (require 'saveplace)
-(require 'ace-jump-mode)
 
 ;; always font-lock plz
 (global-font-lock-mode t)
@@ -33,7 +32,7 @@
 (prefer-coding-system 'utf-8)
 
 ;; location for all backup files
-(setq backup-directory-alist `(("." . ,(expand-file-name (concat dotfiles-dir "bak")))))
+(setq backup-directory-alist `(("." . ,(expand-file-name  (concat relative-config-dir "bak")))))
 
 ;; save last position in file
 (setq-default save-place t)
@@ -70,4 +69,21 @@
 ;; show disambiguated paths to files in reverse order
 (setq uniquify-buffer-name-style 'reverse)
 
-(provide 'setup-general)
+;; don't just close emacs
+(global-set-key (kbd "C-x C-c") 'ask-before-closing)
+
+;; jumping between windows
+(global-set-key (kbd "C-x n") 'next-multiframe-window)
+(global-set-key (kbd "C-x p") 'previous-multiframe-window)
+
+;; my compile shortcute (for rspec, mostly)
+(global-set-key (kbd "C-c r") 'compile)
+
+;; replace-regexp binding
+(global-set-key (kbd "C-x w") 'replace-regexp)
+
+;; don't want this binding at all (lead to 'emacs release news')
+(global-set-key (kbd "C-h C-n") nil)
+
+;; global ace jump thing
+(global-set-key (kbd "C-x b") 'switch-to-buffer)

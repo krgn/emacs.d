@@ -1,2 +1,1 @@
-(require 'sclang)
-(provide 'setup-supercollider)
+(use-package sclang)

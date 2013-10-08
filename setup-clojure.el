@@ -1,6 +1,5 @@
-(require 'clojure-mode)
-(require 'clojure-test-mode)
-
-(setq clojure-defun-indents '(insert select update))
-
-(provide 'setup-clojure)
+(use-package clojure-mode
+  :config
+  (progn
+    (use-package clojure-test-mode)
+    (setq clojure-defun-indents '(insert select update))))

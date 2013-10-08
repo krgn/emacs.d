@@ -12,5 +12,5 @@
 
                   (error nil))))
       (if root
-          (projectile-kill-buffers))))
-  (ad-activate 'projectile-switch-project)))
+          (projectile-kill-buffers)))
+    (ad-activate 'projectile-switch-project)))
