@@ -61,8 +61,6 @@
 (setq initial-major-mode 'org-mode)     ;scratch buffer as well
 (setq initial-scratch-message "# *scratch* buffer for creating quick outlines\n")
 
-;; keep a list of projects and navigation
-(projectile-global-mode)
 ;; recentf for cache
 (recentf-mode 1)
 

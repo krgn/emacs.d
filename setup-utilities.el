@@ -30,6 +30,19 @@
   (untabify (point-min) (point-max))
   (indent-region (point-min) (point-max)))
 
+(defun open-all-files-in-dir ()
+  (interactive)
+  (dolist (file (directory-files default-directory))
+    (unless (or (equal file ".") 
+                (equal file ".."))
+      (find-file file))))
+
+(defun cleanup-buffer ()
+  (interactive)
+  (delete-trailing-whitespace)
+  (untabify (point-min) (point-max))
+  (indent-region (point-min) (point-max)))
+
 (defun create-scratch-buffer nil
   "create a new scratch buffer to work in. (could be *scratch* - *scratchX*)"
   (interactive)
