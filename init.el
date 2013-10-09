@@ -10,6 +10,7 @@
       (mapcar (lambda (item) (concat relative-config-dir item))
            (list "setup-path.el"
                  "setup-font.el"
+                 "setup-nxml.el"
                  "setup-aliases.el"
                  "setup-utilities.el"
                  "setup-general.el"

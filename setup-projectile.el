@@ -9,7 +9,6 @@
       (projectile-kill-buffers))
     (let ((root (condition-case nil 
                     (projectile-project-root)
-
                   (error nil))))
       (if root
           (projectile-kill-buffers)))
