@@ -23,7 +23,7 @@
                  "setup-org.el"
                  "setup-ruby.el"
                  "setup-android.el"
-                 "setup-java.el"
+                 "setup-jdee.el"
                  "setup-smartparens.el"
                  "setup-projectile.el"
                  "setup-js.el"
