@@ -10,7 +10,7 @@
     (setq jde-bug-jre-home "/usr/lib/jvm/java-1.7.0-openjdk-amd64/")
     (setq jde-compile-option-debug (quote ("all" (t nil nil))))
     (setq jde-debugger (quote ("jdb")))
-    (setq jde-global-classpath (split-string (getenv "CLASSPATH") ":"))
+    (setq jde-global-classpath (split-string (or (getenv "CLASSPATH") "") ":"))
     (setq jde-jdk-doc-url "/usr/share/doc/openjdk-7-doc/html/api/index.html")
     (setq jde-jdk-registry (quote (("1.7.0" . "/usr/lib/jvm/java-7-openjdk-amd64/"))))
     (setq jde-jdk (quote ("1.7.0")))
