@@ -114,6 +114,7 @@
      (setq message-sendmail-envelope-from 'header)
      (setq mu4e-maildir "/home/k/mail")
      (setq mail-user-agent 'mu4e-user-agent)
+     (setq mu4e-show-images t)
      (setq mu4e-view-show-images t)
      (setq mu4e-view-image-max-width 800)
      (setq mu4e-attachment-dir "~/dwn")
