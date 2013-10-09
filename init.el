@@ -1,12 +1,13 @@
 ;; set up elpa
 (setq relative-config-dir "~/.emacs.d/")
-(load-file "~/.emacs.d/elpa.el")
+
+(load-file (concat relative-config-dir "elpa.el"))
 
 ;; use use-package :)
 (require 'use-package)
 ;; massage list of file-names
 (setq dot-files 
-      (map 'list (lambda (item) (concat relative-config-dir item))
+      (mapcar (lambda (item) (concat relative-config-dir item))
            (list "setup-path.el"
                  "setup-font.el"
                  "setup-aliases.el"
