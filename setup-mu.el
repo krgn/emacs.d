@@ -33,8 +33,7 @@
                                     "Karsten Gebbert\n"
                                     "Null2 GmbH, Berlin\n"
                                     "http://null2.net\n"
-                                    "mob:  0049.176.6199.5110\n"
-                                    "mail: karsten.gebbert@gmail.com\n")))
+                                    "mob:  0049.176.6199.5110\n")))
         ("karsten.gebbert"
          (mu4e-sent-folder "/karsten.gebbert/[Google Mail]/Sent Mail")
          (mu4e-drafts-folder "/karsten.gebbert/[Google Mail]/Drafts")
@@ -44,8 +43,7 @@
          (message-signature (concat "\n"
                                     "Karsten Gebbert\n"
                                     "http://krgn.me\n"
-                                    "mob:  0049.176.6199.5110\n"
-                                    "mail: karsten.gebbert@gmail.com")))))
+                                    "mob:  0049.176.6199.5110\n")))))
 
     (defun choose-msmtp-account ()
       (if (message-mail-p)
@@ -111,8 +109,7 @@
            message-signature (concat "\n"
                                      "Karsten Gebbert\n"
                                      "http://krgn.me\n"
-                                     "mob:  0049.176.6199.5110\n"
-                                     "mail: karsten.gebbert@gmail.com\n"))
+                                     "mob:  0049.176.6199.5110\n"))
      (setq gnus-dired-mail-mode 'mu4e-user-agent)
      (setq message-sendmail-envelope-from 'header)
      (setq mu4e-maildir "/home/k/mail")

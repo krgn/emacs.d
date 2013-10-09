@@ -14,3 +14,4 @@
     (setq jde-jdk (quote ("1.7.0")))
     (setq jde-regexp-jar-file "/usr/share/java/regexp.jar")
     (setq jde-sourcepath (quote (".")))))
+
