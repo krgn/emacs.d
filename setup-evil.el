@@ -1,6 +1,9 @@
 (use-package evil
   :init
   (progn 
+    (evil-set-toggle-key "C-`")
+    (global-set-key (kbd "C-z") nil)
+
     (evil-mode 1)
     (setq evil-default-cursor t)
     
