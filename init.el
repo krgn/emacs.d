@@ -1,5 +1,6 @@
 ;; set up elpa
 (setq relative-config-dir "~/.emacs.d/")
+(setq setup-files-dir "config/")
 
 (load-file (concat relative-config-dir "elpa.el"))
 
@@ -7,31 +8,33 @@
 (require 'use-package)
 ;; massage list of file-names
 (setq dot-files 
-      (mapcar (lambda (item) (concat relative-config-dir item))
-           (list "setup-path.el"
-                 "setup-font.el"
+      (mapcar (lambda (item) (concat relative-config-dir setup-config-dir item))
+           (list "setup-path.el"        ;path
+                 "setup-font.el"        ;font
+                 "setup-aliases.el"     ;cmd aliases
+                 "setup-utilities.el"   ;functions
+                 "setup-general.el"     ;general
+                 "setup-mu.el"          ;mail
+                 "setup-evil.el"        ;vimim (vi much improved)
+                 "setup-projectile.el"  ;projects
+                 "setup-keychain.el"    ;keychain
+                 "setup-magit.el"       ;magit
                  "setup-nxml.el"
-                 "setup-aliases.el"
-                 "setup-utilities.el"
-                 "setup-general.el"
-                 "setup-evil.el"
                  "setup-auto-complete.el"
                  "setup-win.el"
                  "setup-yaml.el"
                  "setup-compile.el"
-                 "setup-magit.el"
                  "setup-org.el"
                  "setup-ruby.el"
-                 "setup-android.el"
-                 "setup-jdee.el"
+                 "setup-android.el"     ;java
+                 "setup-jdee.el"        ;java
+                 "setup-eclim.el"       ;java
                  "setup-smartparens.el"
-                 "setup-projectile.el"
                  "setup-js.el"
                  "setup-yasnippet.el"
                  "setup-erc.el"
                  "setup-scheme.el"
                  "setup-clojure.el"
-                 "setup-keychain.el"
                  "setup-md.el"
                  "setup-ido-imenu.el"
                  "setup-bindings.el"
@@ -40,7 +43,6 @@
                  "setup-workgroups.el"
                  "setup-shell.el"
                  "setup-theme.el"
-                 "setup-mu.el"
                  "setup-supercollider.el")))
 
 (dolist (file dot-files) (load-file file))

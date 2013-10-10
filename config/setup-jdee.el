@@ -1,9 +1,11 @@
 (use-package jde-mode
+  :disabled t
   :mode ("\\.java\\'" . jde-mode)
   :load-path "site-lisp/jdee-2.4.1/lisp"
   :init
   (progn
-    (autoload 'jde-mode "jde" "JDE mode" t)
+    (add-hook 'jde-mode-hook (lambda ()  (c-set-style "java")))
+    (autoload 'jde-mode "jde" "jde mode" t)
     (setq jde-bug-debugger-host-address "127.0.0.1")
     (setq jde-bug-jre-home "/usr/lib/jvm/java-1.7.0-openjdk-amd64/")
     (setq jde-compile-option-debug (quote ("all" (t nil nil))))

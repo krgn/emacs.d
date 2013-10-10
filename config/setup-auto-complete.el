@@ -19,9 +19,10 @@
   (progn 
     (use-package auto-complete-config)
     (use-package ac-dabbrev)
+    (ac-set-trigger-key "M-p")
     (ac-config-default)
-    (setq ac-use-menu-map t )
-    (setq ac-menu-height 20)
+    (setq ac-use-menu-map t)
+    (setq ac-menu-height 50)
     (setq ac-use-quick-help nil) 
     (setq ac-comphist-file  "~/.emacs.d/ac-comphist.dat")
     (setq ac-ignore-case nil)

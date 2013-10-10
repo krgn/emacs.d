@@ -2,10 +2,9 @@
   :init
   (progn
     (use-package popup)
+    (setq yas/snippet-revival t)
     (yas--initialize)
     (yas-global-mode 1)
-    (setq yas/snippet-revival t)
-    
     (defun yas-popup-isearch-prompt (prompt choices &optional display-fn)
       (when (featurep 'popup)
         (popup-menu*
