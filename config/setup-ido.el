@@ -6,6 +6,10 @@
     (use-package cl)
     (use-package fuzzy-match)
 
+    (use-package ido-ubiquitous
+      :init
+      (ido-ubiquitous-mode 1))
+
     (ido-mode t)
     (ido-everywhere t)
 
