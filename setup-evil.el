@@ -20,14 +20,20 @@
                     (set-face-background 'mode-line (car color))
                     (set-face-foreground 'mode-line (cdr color))))))
 
+    ;; set up the vim-style number inc/dec keys
+    (use-package evil-numbers
+      :init
+      (progn
+        (define-key evil-normal-state-map "+" 'evil-numbers/inc-at-pt)
+        (define-key evil-normal-state-map "-" 'evil-numbers/dec-at-pt)))
+
+    ;; vim-style leader 
     (use-package evil-leader
       :init
       (progn
         (setq evil-leader/leader ",")
         (setq evil-leader/in-all-states t)
-
         (global-evil-leader-mode 1)
-
         (evil-leader/set-key
           "e" 'find-file
           "w" 'save-buffer
