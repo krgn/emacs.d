@@ -8,14 +8,14 @@
 (require 'use-package)
 ;; massage list of file-names
 (setq dot-files 
-      (mapcar (lambda (item) (concat relative-config-dir setup-config-dir item))
-           (list "setup-path.el"        ;path
+      (mapcar (lambda (item) (concat relative-config-dir setup-files-dir item))
+           (list "setup-evil.el"        ;vimim (vi much improved)
+                 "setup-path.el"        ;path
                  "setup-font.el"        ;font
                  "setup-aliases.el"     ;cmd aliases
                  "setup-utilities.el"   ;functions
                  "setup-general.el"     ;general
                  "setup-mu.el"          ;mail
-                 "setup-evil.el"        ;vimim (vi much improved)
                  "setup-projectile.el"  ;projects
                  "setup-keychain.el"    ;keychain
                  "setup-magit.el"       ;magit
