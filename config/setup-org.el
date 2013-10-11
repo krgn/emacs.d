@@ -5,7 +5,6 @@
     (add-hook 'org-mode-hook 'turn-on-auto-fill)
     (add-hook 'org-mode-hook 'flyspell-mode)
 
-    (add-hook 'org-mode-hook (lambda () (org-display-inline-images t)))
     ;; change the flyspell languange with:
     ;; (ispell-change-dictionary lang)
 
@@ -16,7 +15,6 @@
 
     (setq org-directory "~/org")
     (setq org-agenda-files (quote ("~/org/agenda.org")))
-    (setq org-completion-use-ido t)
 
     (setq org-agenda-window-setup (quote other-frame))
     (setq org-archive-location "~/org/archive/%s_archive::")
