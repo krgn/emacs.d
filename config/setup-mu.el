@@ -1,6 +1,7 @@
 (use-package mu4e
   :init
   (progn
+    (global-set-key [XF86Mail] 'mu4e)
     ;; for attachments
     (use-package gnus-dired)
      ;; use the standard bindings as a base
