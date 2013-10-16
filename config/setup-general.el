@@ -72,10 +72,6 @@
 ;; don't just close emacs
 (global-set-key (kbd "C-x C-c") 'ask-before-closing)
 
-;; jumping between windows
-(global-set-key (kbd "C-x n") 'next-multiframe-window)
-(global-set-key (kbd "C-x p") 'previous-multiframe-window)
-
 ;; my compile shortcute (for rspec, mostly)
 (global-set-key (kbd "C-c r") 'compile)
 

@@ -38,7 +38,6 @@
                  "setup-clojure.el"
                  "setup-md.el"
                  "setup-ido.el"
-                 "setup-bindings.el"
                  "setup-ace-jump.el"
                  "setup-dired.el"
                  "setup-workgroups.el"
