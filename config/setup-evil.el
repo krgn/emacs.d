@@ -2,7 +2,10 @@
   :init
   (progn
     (evil-set-toggle-key "C-`")
+
     (global-set-key (kbd "C-z") nil)
+    (global-set-key (kbd "C-x o") nil)
+    (global-set-key (kbd "C-x C-s") nil)
 
     (evil-mode 1)
     (setq evil-default-cursor t)
@@ -40,6 +43,7 @@
           "W" 'save-some-buffers
           "k" 'kill-buffer
           "K" 'kill-buffer-and-window
+          "g" 'magit-status
           "d" 'dired-jump
           "SPC" #'delete-trailing-whitespace
           "m" 'compile)))))
