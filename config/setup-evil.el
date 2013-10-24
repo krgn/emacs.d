@@ -10,6 +10,12 @@
     (evil-mode 1)
     (setq evil-default-cursor t)
 
+    (use-package project-explorer)
+    (use-package surround
+      :init
+      (progn
+        (global-surround-mode 1)))
+
     ;; colorize the modeline according to current modal editing state
     (lexical-let ((default-color (cons (face-background 'mode-line)
                                        (face-foreground 'mode-line))))
@@ -39,6 +45,7 @@
         (global-evil-leader-mode 1)
         (evil-leader/set-key
           "e" 'find-file
+          "f" 'project-explorer-open
           "w" 'save-buffer
           "W" 'save-some-buffers
           "k" 'kill-buffer
@@ -47,3 +54,4 @@
           "d" 'dired-jump
           "SPC" #'delete-trailing-whitespace
           "m" 'compile)))))
+
