@@ -29,7 +29,6 @@
                  "setup-android.el"     ;java
                  "setup-jdee.el"        ;java
                  "setup-eclim.el"       ;java
-                 "setup-smartparens.el"
                  "setup-html.el"
                  "setup-js.el"
                  "setup-yasnippet.el"
