@@ -26,9 +26,23 @@
                                      ((evil-emacs-state-p)  '("#444488" . "#ffffff"))
                                      ((buffer-modified-p)   '("#006fa0" . "#ffffff"))
                                      (t default-color))))
-                    (set-face-background 'mode-line (car color))
-                    (set-face-foreground 'mode-line (cdr color))))))
+                    (if (fboundp 'powerline-default-theme)
+                        ;; powerline
+                        (progn 
+                          (set-face-attribute 'powerline-active1 nil
+                                              :box nil
+                                              :background (car color)
+                                              :foreground (cdr color))
+                          (set-face-attribute 'powerline-active2 nil
+                                              :box nil
+                                              :background (cdr color)
+                                              :foreground (car color)))
 
+                      (progn
+                        (set-face-background 'mode-line (car color))
+                        (set-face-foreground 'mode-line (cdr color))))))))
+
+                  
     ;; set up the vim-style number inc/dec keys
     (use-package evil-numbers
       :init
@@ -36,7 +50,7 @@
         (define-key evil-normal-state-map "+" 'evil-numbers/inc-at-pt)
         (define-key evil-normal-state-map "-" 'evil-numbers/dec-at-pt)))
 
-    ;; vim-style leader 
+    ;; vim-style leader
     (use-package evil-leader
       :init
       (progn
@@ -44,8 +58,10 @@
         (setq evil-leader/in-all-states t)
         (global-evil-leader-mode 1)
         (evil-leader/set-key
+          "a" 'align-regexp
           "e" 'find-file
           "f" 'project-explorer-open
+          "t" 'projectile-find-file
           "w" 'save-buffer
           "W" 'save-some-buffers
           "k" 'kill-buffer
@@ -54,4 +70,3 @@
           "d" 'dired-jump
           "SPC" #'delete-trailing-whitespace
           "m" 'compile)))))
-

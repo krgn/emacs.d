@@ -2,7 +2,7 @@
   :init
   (progn 
     (use-package inf-ruby)
-    ;; configure haml-mode
+
     (use-package haml-mode
       :init 
       (progn 
@@ -16,12 +16,23 @@
         (add-to-list 'auto-mode-alist '("\\.erb\\'" . rhtml-mode))
         (add-to-list 'auto-mode-alist '("\\.rhtml\\'" . rhtml-mode))))
 
+    (use-package rsense
+      :init
+      (progn
+        (setq rsense-home "/home/k/src/misc/rsense")
+        (add-to-list 'ac-sources 'ac-source-rsense-method)
+        (add-to-list 'ac-sources 'ac-source-rsense-constant)))
+
     ;; file type associations
     (add-to-list 'auto-mode-alist '("\\.rb$" . enh-ruby-mode))
     (add-to-list 'interpreter-mode-alist '("ruby" . enh-ruby-mode))
+
     ;; configure ruby-mode
     (autoload 'enh-ruby-mode "enh-ruby-mode" "Major mode for ruby files" t)
+
+    ;; hooks  
     (add-hook 'enh-ruby-mode-hook 'highlight-todo)
+
     (setq enh-ruby-program "~/.rbenv/shims/ruby")
     (setq ruby-deep-indent-paren nil)
     (setq ruby-insert-encoding-magic-comment nil)
