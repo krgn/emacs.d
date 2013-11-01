@@ -30,6 +30,7 @@
                  "setup-jdee.el"        ;java
                  "setup-eclim.el"       ;java
                  "setup-html.el"
+                 "setup-haskell.el"
                  "setup-js.el"
                  "setup-yasnippet.el"
                  "setup-erc.el"
