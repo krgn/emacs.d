@@ -54,6 +54,8 @@
     (use-package evil-leader
       :init
       (progn
+        (use-package project-explorer)
+
         (setq evil-leader/leader ",")
         (setq evil-leader/in-all-states t)
         (global-evil-leader-mode 1)
