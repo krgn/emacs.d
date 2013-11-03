@@ -16,33 +16,6 @@
       (progn
         (global-surround-mode 1)))
 
-    ;; colorize the modeline according to current modal editing state
-    (lexical-let ((default-color (cons (face-background 'mode-line)
-                                       (face-foreground 'mode-line))))
-      (add-hook 'post-command-hook
-                (lambda ()
-                  (let ((color (cond ((minibufferp) default-color)
-                                     ((evil-insert-state-p) '("#e80000" . "#ffffff"))
-                                     ((evil-emacs-state-p)  '("#444488" . "#ffffff"))
-                                     ((buffer-modified-p)   '("#006fa0" . "#ffffff"))
-                                     (t default-color))))
-                    (if (fboundp 'powerline-default-theme)
-                        ;; powerline
-                        (progn 
-                          (set-face-attribute 'powerline-active1 nil
-                                              :box nil
-                                              :background (car color)
-                                              :foreground (cdr color))
-                          (set-face-attribute 'powerline-active2 nil
-                                              :box nil
-                                              :background (cdr color)
-                                              :foreground (car color)))
-
-                      (progn
-                        (set-face-background 'mode-line (car color))
-                        (set-face-foreground 'mode-line (cdr color))))))))
-
-                  
     ;; set up the vim-style number inc/dec keys
     (use-package evil-numbers
       :init
