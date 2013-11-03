@@ -2,7 +2,9 @@
   :init
   (progn
     (load-theme 'wombat t)
-    (set-face-attribute 'mode-line nil :box nil :foreground "#ffffff")
+    (set-face-attribute 'mode-line nil :box nil :foreground "#a9a9a9")
+    (set-face-attribute 'powerline-active1 nil :box nil :foreground "#a9a9a9")
+    (set-face-attribute 'powerline-active2 nil :box nil :foreground "#a9a9a9")
 
     (use-package powerline
       :init
@@ -59,7 +61,7 @@
                     (lambda ()
                       (let ((color (cond ((minibufferp) default-color)
                                          ((evil-insert-state-p) '("#b22222" . "#000000"))
-                                         ((evil-normal-state-p) '("#98fb98" . "#000000"))
+                                         ((evil-normal-state-p) '("#006400" . "#000000"))
                                          ((evil-visual-state-p) '("#ffa500" . "#000000"))
                                          ((evil-emacs-state-p)  '("#b03060" . "#000000"))
                                          ((buffer-modified-p)   '("#006fa0" . "#000000"))
@@ -67,7 +69,7 @@
                         (if (fboundp 'powerline-default-theme)
                             (progn 
                               (powerline-reset)
-                              (set-face-attribute 'powerline-active1 nil :box nil :weight 'bold :background (car color) :foreground (cdr color))
+                              (set-face-attribute 'mode-line nil :box nil :weight 'bold :background (car color) :foreground (cdr color))
                               (powerline-krgn-theme))
                           (progn
                             (set-face-background 'mode-line (car color))
