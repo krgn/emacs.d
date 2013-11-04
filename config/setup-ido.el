@@ -12,6 +12,7 @@
 
     (ido-mode t)
     (ido-everywhere t)
+    (ido-vertical-mode t)
 
     (setq ido-enable-flex-matching t)
     (setq imenu-auto-rescan t)
