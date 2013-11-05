@@ -5,20 +5,23 @@
     (use-package imenu)
     (use-package cl)
     (use-package fuzzy-match)
-
+    (use-package ido-vertical-mode
+      :init
+      (ido-vertical-mode t))
     (use-package ido-ubiquitous
       :init
       (ido-ubiquitous-mode 1))
+    (use-package ido-hacks
+      :init
+      (ido-hacks-mode t))
 
     (ido-mode t)
     (ido-everywhere t)
-    (ido-vertical-mode t)
 
     (setq ido-enable-flex-matching t)
     (setq imenu-auto-rescan t)
     (setq imenu-max-item-length 100)
     (setq imenu-use-popup-menu t)
-    (setq ido-decorations '("\n    " "" "\n    " "\n    ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]"))
 
     (defun ibuffer-ido-find-file ()
       "Like `ido-find-file', but default to the directory of the buffer at point."
@@ -74,12 +77,4 @@
            (t
             (goto-char position))))))
 
-    (global-set-key (kbd "C-c i") 'ido-goto-symbol)
-    (global-set-key "\M-x"
-                    (lambda ()
-                      (interactive)
-                      (call-interactively
-                       (intern
-                        (ido-completing-read
-                         "M-x "
-                         (all-completions "" obarray 'commandp))))))))
+    (global-set-key (kbd "C-c i") 'ido-goto-symbol)))
