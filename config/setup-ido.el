@@ -14,6 +14,11 @@
     (use-package ido-hacks
       :init
       (ido-hacks-mode t))
+    (use-package smex
+      :init
+      (progn
+        (smex-initialize)
+        (global-set-key (kbd "M-x") 'smex)))
 
     (ido-mode t)
     (ido-everywhere t)
