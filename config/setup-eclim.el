@@ -2,6 +2,7 @@
   :init
   (progn
     (use-package eclimd)
+    (add-hook 'java-mode-hook (lambda () (eclim-mode 1)))
 
     (add-hook 'eclim-mode-hook 'setup-eclim)
     (defun setup-eclim ()
