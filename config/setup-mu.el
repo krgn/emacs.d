@@ -123,7 +123,7 @@
      (setq message-send-mail-function 'message-send-mail-with-sendmail)
      (setq mu4e-headers-date-format "%d/%b/%Y %H:%M")
      (setq mu4e-view-prefer-html nil)
-     (setq mu4e-html2text-command "html2text -utf8 -width 72")
+     (setq mu4e-html2text-command "html2text -nometa -utf8 -width 72")
      (setq sendmail-program "/usr/bin/msmtp")
      (setq mu4e-decryption-policy t)
      (setq mu4e-headers-skip-duplicates t)
